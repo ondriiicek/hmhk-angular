@@ -1,1 +1,33 @@
-/* You can add global styles to this file, and also import other style files */
+@import '/src/assets/scss/variables';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font: { 
+    family: 'Poppins', sans-serif;
+    weight: 400;
+    size: 90%;
+  }
+}
+
+.nav-link{
+  color: $primary-font-color;
+
+  &:hover,
+  &:active{
+    color: $primary-font-color;
+  }
+}
+
+.btn-danger{
+  background: $red;
+}
+
+a{
+  cursor: pointer;
+}

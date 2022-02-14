@@ -1,0 +1,13 @@
+@import '/src/assets/scss/variables';
+@import '/src/assets/scss/mixins';
+
+img{
+  width: 6rem;
+}
+
+.active{
+  color: $red;
+  font-weight: 500;
+}
+
+@include link-hover-animation();

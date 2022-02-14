@@ -1,0 +1,32 @@
+@import '/src/assets/scss/variables';
+@import '/src/assets/scss/mixins';
+.latest-articles{
+  margin-top: 2rem;
+}
+.card{
+  border: none;
+  color: $primary-font-color;
+  .card-title{
+    font-weight: 600;
+  }
+
+  .card-img-top{
+    border-radius: 1rem;
+  }
+
+  .author-image{
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .author-name{
+    font-size: .8rem;
+
+
+    span{
+      font-weight: 600;
+    }
+  }
+
+  @include link-hover-animation();
+}
