@@ -1,0 +1,46 @@
+<form class="contact-form" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+  <div class="row mb-3">
+    <div class="col-lg-6">
+      <input 
+        type="text"
+        class="form-control"
+        placeholder="Meno"
+        formControlName="name">
+      <span class="help-block" *ngIf="contactForm.get('name')!.invalid && contactForm.get('name')!.touched">Zadajte meno</span>
+    </div>
+    <div class="col-lg-6">
+      <input 
+        type="text"
+        class="form-control"
+        placeholder="E-mail"
+        formControlName="email">
+      <span class="help-block" *ngIf="contactForm.get('email')!.invalid && contactForm.get('email')!.touched">Zadajte e-mail</span>
+    </div>
+  </div>
+  <div class="row mb-3">
+    <div class="col-12">
+      <input 
+        type="text"
+        class="form-control"
+        placeholder="Predmet Správy"
+        formControlName="subject">
+      <span class="help-block" *ngIf="contactForm.get('subject')!.invalid && contactForm.get('subject')!.touched">Zadajte predmet správy</span>
+    </div>
+  </div>
+  <div class="row mb-3">
+    <div class="col-12">
+      <textarea 
+        class="form-control" 
+        cols="30" 
+        rows="5" 
+        placeholder="Správa"
+        formControlName="message"></textarea>
+      <span class="help-block" *ngIf="contactForm.get('message')!.invalid && contactForm.get('message')!.touched">Zadajte správu</span>
+    </div>
+  </div>
+  <div class="row mb-3">
+    <div class="col-12">
+      <button type="submit" class="btn btn-primary" [disabled]="!contactForm.valid">Odoslať</button>
+    </div>
+  </div>
+</form>

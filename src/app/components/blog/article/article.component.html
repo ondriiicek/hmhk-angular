@@ -1,0 +1,11 @@
+<div class="skuska">
+  <h1>{{ article.author }}</h1>
+  <h2>{{ article.date }}</h2>
+  <p>{{ article.title}}</p>
+
+  <ul>
+    <li *ngFor="let paragraph of article.content">
+      <p>{{ paragraph.content}}</p>
+    </li>
+  </ul>
+</div>

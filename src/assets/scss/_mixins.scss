@@ -26,3 +26,19 @@
     }
   }
 }
+
+@mixin article-preview-footer(){
+  .author-image{
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .author-name{
+    font-size: .8rem;
+
+
+    span{
+      font-weight: 600;
+    }
+  }
+}

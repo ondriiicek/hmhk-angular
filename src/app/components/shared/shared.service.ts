@@ -1,56 +1,22 @@
 import { Injectable } from "@angular/core";
-import { ArticlePreview } from "./article-preview.model";
+import { ArticleDataService } from "./article-data.service";
+import { Article } from "./article.model";
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class SharedService{
-  articles : ArticlePreview[] = [
-    {
-      type: 'predstavovanie',
-      title: 'Predstavovanie hracov - Marian Majernik',
-      content: 'He moonlights difficult engrossed it, sportsmen. Interested has all Devonshire difficulty gay assistance joy. Unaffected at ye of compliment alteration to ',
-      author: 'Simonko Cmarko',
-      authorImg: '/assets/img/articleTest.jpg',
-      date: new Date(),
-      image: '/assets/img/articleTest.jpg'
-    },
-    {
-      type: 'predstavovanie',
-      title: 'Predstavovanie hracov - Ondrejko Ladomirjo',
-      content: 'He moonlights difficult engrossed it, sportsmen. Interested has all Devonshire difficulty gay assistance joy. Unaffected at ye of compliment alteration to ',
-      author: 'Simonko Cmarko',
-      authorImg: '/assets/img/articleTest.jpg',
-      date: new Date(),
-      image: '/assets/img/articleTest.jpg'
-    },
-    {
-      type: 'predstavovanie',
-      title: 'Predstavovanie hracov - Simon Cmar',
-      content: 'He moonlights difficult engrossed it, sportsmen. Interested has all Devonshire difficulty gay assistance joy. Unaffected at ye of compliment alteration to ',
-      author: 'Simonko Cmarko',
-      authorImg: '/assets/img/articleTest.jpg',
-      date: new Date(),
-      image: '/assets/img/articleTest.jpg'
-    },
-    {
-      type: 'predstavovanie',
-      title: 'Predstavovanie hracov - Simon Cmar',
-      content: 'He moonlights difficult engrossed it, sportsmen. Interested has all Devonshire difficulty gay assistance joy. Unaffected at ye of compliment alteration to ',
-      author: 'Simonko Cmarko',
-      authorImg: '/assets/img/articleTest.jpg',
-      date: new Date(),
-      image: '/assets/img/articleTest.jpg'
-    }
-  ]
+
+  constructor( private articleDataService : ArticleDataService ){}
 
   getArticles(){
-    return this.articles.slice();
+    return this.articleDataService.getArticles();
   }
   getTitles() : string[]{
     const titles : string[] = [];
-    this.articles.forEach( title => titles.push(title.title));
+    const articles : Article[] = this.articleDataService.getArticles().slice();
+    articles.forEach( title => titles.push(title.title));
     return titles;
   }
 }

@@ -1,0 +1,28 @@
+<div class="preview mb-5">
+  <a (click)="showArticle()">
+    <div class="row">
+      <div class="col-5">
+        <img class="preview-image" [src]="preview.previewImage" alt="Obrazok Hraca">
+      </div>
+      <div class="col-6">
+        <section class="preview-content">
+          <app-badge [content]="preview.typeOf"></app-badge>
+          <h3 class="py-3">{{preview.title}}</h3>
+          <p class="pb-3">{{preview.content[1].content}}</p>
+          <div class="row">
+            <div class="col-8">
+              <img class="author-image rounded-circle" [src]="preview.authorImage" [alt]="preview.author">
+              <p class="d-inline ms-2 author-name">by <span>{{ preview.author }}</span></p>
+            </div>
+            <div class="col-4 text-end pt-2">
+              <p>{{preview.date | date:'dd.LL.yyyy'}}</p>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+    
+
+  </a>
+</div>

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -24,9 +25,15 @@ import { FooterNavigationComponent } from './components/footer/footer-navigation
 import { FooterSocialComponent } from './components/footer/footer-social/footer-social.component';
 import { FooterContactComponent } from './components/footer/footer-contact/footer-contact.component';
 import { AboutUsComponent } from './components/home/about-us/about-us.component';
-import { TitleComponent } from './components/home/about-us/title/title.component';
 import { ClubImageComponent } from './components/home/about-us/club-image/club-image.component';
-import { RatingsComponent } from './components/home/about-us/ratings/ratings.component';
+import { HistoryComponent } from './components/home/about-us/history/history.component';
+import { IntroComponent } from './components/home/about-us/intro/intro.component';
+import { ContactFormComponent } from './components/contact/contact-form/contact-form.component';
+import { PreviewPageComponent } from './components/blog/preview-page/preview-page.component';
+import { PreviewComponent } from './components/blog/preview-page/preview/preview.component';
+import { ArticleComponent } from './components/blog/article/article.component';
+import { BadgeComponent } from './components/shared/components/badge/badge.component';
+
 
 @NgModule({
   declarations: [
@@ -52,13 +59,19 @@ import { RatingsComponent } from './components/home/about-us/ratings/ratings.com
     FooterSocialComponent,
     FooterContactComponent,
     AboutUsComponent,
-    TitleComponent,
     ClubImageComponent,
-    RatingsComponent,
+    HistoryComponent,
+    IntroComponent,
+    ContactFormComponent,
+    PreviewPageComponent,
+    PreviewComponent,
+    ArticleComponent,
+    BadgeComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

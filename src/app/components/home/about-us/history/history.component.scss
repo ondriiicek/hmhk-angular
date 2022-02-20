@@ -1,0 +1,19 @@
+@import '/src/assets/scss/variables';
+
+.about-history{
+  display: flex;
+  position: relative;
+
+  h2{
+    transform: rotate(-90deg);
+    color: #a09d95;
+    font-size: 2.5rem;
+    font-weight: 600;
+    position: absolute;
+    right: -2rem;
+    top: 1.1rem;
+  }
+  p{
+    width: 90%;
+  }
+}

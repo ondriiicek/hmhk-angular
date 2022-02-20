@@ -1,0 +1,17 @@
+@import '/src/assets/scss/mixins';
+
+.preview{
+  .preview-content{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+  }
+
+  .preview-image{
+    max-width: 100%;
+    border-radius: .4rem;
+  }
+
+  @include article-preview-footer();
+}

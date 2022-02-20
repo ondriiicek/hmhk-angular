@@ -1,0 +1,20 @@
+.footer-nav{
+  ul{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+  }
+  li{
+    text-align: left;
+  }
+}
+
+@media( max-width: 1200px ){
+  h3{
+    display: none;
+  }
+
+  .footer-nav{
+    display: none;
+  }
+}

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ArticlePreview } from '../../shared/article-preview.model';
+import { Article } from '../../shared/article.model';
 import { SharedService } from '../../shared/shared.service';
 
 @Component({
@@ -8,12 +8,14 @@ import { SharedService } from '../../shared/shared.service';
   styleUrls: ['./latest-articles.component.scss']
 })
 export class LatestArticlesComponent implements OnInit {
-  articles : ArticlePreview[] = [];
+  articles : Article[] = [];
+  content! : string;
 
   constructor( private sharedService : SharedService ) { }
 
   ngOnInit(): void {
     this.articles = this.sharedService.getArticles();
+    console.log(this.articles[0].content[1].content);
+    
   }
-
 }

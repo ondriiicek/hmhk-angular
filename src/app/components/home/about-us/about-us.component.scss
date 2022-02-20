@@ -1,41 +1,38 @@
 @import '/src/assets/scss/variables';
 
 #about-us{
-  color: #fff;
   display: grid;
-  grid-template-columns: repeat(6, .5fr);
-  gap: 1rem;
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr, .5fr;
+  gap: 2rem;
   grid-template-areas: 
-    "t t t c c c"
-    "r i i c c c"
-    "r i i s s s ";
+    "im i"
+    "h i";
 
-  .title{ grid-area: t; }
-  .club-image{ grid-area: c; }
-  .ratings{ grid-area: r; }
-  .introduction{ grid-area: i; }
-  .something-more{ grid-area: s }
-
-  &>*{
-    background: #000;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
+  margin-bottom: 5rem;
   .club-image{
-    background-image: url(/assets/img/articleTest.jpg);
-    background-position: center center;
-    background-size: cover;
+    background: {
+      image: url('/assets/img/articleTest.jpg');
+      size: cover;
+      position: 50% 50%;
+    }
+    grid-area: im;
+    padding: 10rem;
+    border-radius: .2rem;
   }
 
-  .title{
-    background: $red;
+  .history{ 
+    grid-area: h; 
+    border-top: 5px solid lighten( #a09d95, 10%);
+    padding-top: 2rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
-
-  .ratings{
-    background: $light-grey;
+  .intro{ 
+    grid-area: i; 
+    border-left: 5px solid lighten( #a09d95, 10%);
+    padding-left: 4rem;
+    padding-right: 3rem;
+    
   }
 }

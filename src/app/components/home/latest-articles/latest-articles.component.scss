@@ -20,19 +20,7 @@
     border-radius: 1rem;
   }
 
-  .author-image{
-    width: 2.5rem;
-    height: 2.5rem;
-  }
-
-  .author-name{
-    font-size: .8rem;
-
-
-    span{
-      font-weight: 600;
-    }
-  }
+  @include article-preview-footer();
 
   @include link-hover-animation();
 }

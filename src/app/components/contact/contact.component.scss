@@ -5,5 +5,39 @@ h2{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   margin: 0 auto;
-  gap: 0 2rem;
+  gap: 2rem 2rem;
+  margin-bottom: 7rem;
+}
+
+@media ( max-width: 996px ){
+  .contact{
+    width: 90%;
+    margin: 0 auto;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media ( max-width: 768px ){
+  .contact{
+    width: 100%;
+  }
+}
+
+@media ( max-width: 541px ){
+  .contact{
+    grid-template-columns: 1fr;
+    width: 60%;
+  }
+}
+
+@media ( max-width: 425px ){
+  .contact{
+    width: 85%;
+  }
+}
+
+@media ( max-width: 325px ){
+  .contact{
+    width: 100%;
+  }
 }
