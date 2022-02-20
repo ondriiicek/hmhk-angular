@@ -16,7 +16,17 @@ import { MostReadComponent } from './components/home/most-read/most-read.compone
 import { LatestArticlesComponent } from './components/home/latest-articles/latest-articles.component';
 import { SidebarComponent } from './components/home/sidebar/sidebar.component';
 import { SocialComponent } from './components/home/sidebar/social/social.component';
-import { TopArticlesComponent } from './components/home/sidebar/top-articles/top-articles.component';
+import { TopArticleCategoriesComponent } from './components/home/sidebar/top-article-categories/top-article-categories.component';
+import { CategorieComponent } from './components/home/sidebar/top-article-categories/categorie/categorie.component';
+import { ContactCardComponent } from './components/contact/contact-card/contact-card.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { FooterNavigationComponent } from './components/footer/footer-navigation/footer-navigation.component';
+import { FooterSocialComponent } from './components/footer/footer-social/footer-social.component';
+import { FooterContactComponent } from './components/footer/footer-contact/footer-contact.component';
+import { AboutUsComponent } from './components/home/about-us/about-us.component';
+import { TitleComponent } from './components/home/about-us/title/title.component';
+import { ClubImageComponent } from './components/home/about-us/club-image/club-image.component';
+import { RatingsComponent } from './components/home/about-us/ratings/ratings.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +44,17 @@ import { TopArticlesComponent } from './components/home/sidebar/top-articles/top
     LatestArticlesComponent,
     SidebarComponent,
     SocialComponent,
-    TopArticlesComponent
+    TopArticleCategoriesComponent,
+    CategorieComponent,
+    ContactCardComponent,
+    FooterComponent,
+    FooterNavigationComponent,
+    FooterSocialComponent,
+    FooterContactComponent,
+    AboutUsComponent,
+    TitleComponent,
+    ClubImageComponent,
+    RatingsComponent,
   ],
   imports: [
     BrowserModule,

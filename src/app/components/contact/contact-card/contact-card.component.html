@@ -1,0 +1,12 @@
+<div class="my-card">
+  <div class="card-front" [ngStyle]="{'background-image': getImage()}"></div>
+  <div class="card-back">
+    <h3> {{contact.name}}</h3>
+    <h4> {{ contact.position}} </h4>
+    <div class="social-icons">
+      <a><i class="fa-solid fa-envelope"></i> <span>{{contact.email}}</span></a>
+      <a><i class="fa-solid fa-phone"></i> <span>{{contact.phone}}</span></a>
+    </div>
+  </div>
+</div>
+

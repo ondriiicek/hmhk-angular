@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TopArticlesComponent } from './top-articles.component';
+import { FooterContactComponent } from './footer-contact.component';
 
-describe('TopArticlesComponent', () => {
-  let component: TopArticlesComponent;
-  let fixture: ComponentFixture<TopArticlesComponent>;
+describe('FooterContactComponent', () => {
+  let component: FooterContactComponent;
+  let fixture: ComponentFixture<FooterContactComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TopArticlesComponent ]
+      declarations: [ FooterContactComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TopArticlesComponent);
+    fixture = TestBed.createComponent(FooterContactComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

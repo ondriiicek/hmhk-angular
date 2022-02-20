@@ -1,0 +1,9 @@
+h2{
+  font-weight: 400;
+}
+.contact{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 0 auto;
+  gap: 0 2rem;
+}

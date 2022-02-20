@@ -1,5 +1,11 @@
 @import '/src/assets/scss/variables';
 @import '/src/assets/scss/mixins';
+
+.fa-hourglass-end,
+.latest-title{
+  color: $red;
+}
+
 .latest-articles{
   margin-top: 2rem;
 }

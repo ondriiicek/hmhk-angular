@@ -1,1 +1,7 @@
-<p>contact works!</p>
+<div class="container">
+  <h2 class="text-center my-5">Kontaknté údaje</h2>
+  <div class="contact">
+    <app-contact-card *ngFor="let contact of contacts" [contact]="contact"></app-contact-card>
+  </div>
+</div>
+
