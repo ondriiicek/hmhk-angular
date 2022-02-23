@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
-import { ArticleDataService } from "./article-data.service";
-import { Article } from "./article.model";
+import { DataService } from "./data.service";
+import { Article } from "./models/article.model";
 
 @Injectable({
   providedIn: 'root'
@@ -8,15 +8,14 @@ import { Article } from "./article.model";
 
 export class SharedService{
 
-  constructor( private articleDataService : ArticleDataService ){}
+  constructor( private dataService : DataService ){}
 
-  getArticles(){
-    return this.articleDataService.getArticles();
-  }
+  
   getTitles() : string[]{
     const titles : string[] = [];
-    const articles : Article[] = this.articleDataService.getArticles().slice();
+    const articles : Article[] = this.dataService.getArticles().slice();
     articles.forEach( title => titles.push(title.title));
     return titles;
   }
+  
 }

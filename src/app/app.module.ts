@@ -33,6 +33,7 @@ import { PreviewPageComponent } from './components/blog/preview-page/preview-pag
 import { PreviewComponent } from './components/blog/preview-page/preview/preview.component';
 import { ArticleComponent } from './components/blog/article/article.component';
 import { BadgeComponent } from './components/shared/components/badge/badge.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -71,7 +72,8 @@ import { BadgeComponent } from './components/shared/components/badge/badge.compo
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

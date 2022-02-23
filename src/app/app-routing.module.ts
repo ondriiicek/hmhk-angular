@@ -7,17 +7,20 @@ import { CategoriesComponent } from './components/categories/categories.componen
 import { ContactComponent } from './components/contact/contact.component';
 import { HomeComponent } from './components/home/home.component';
 import { MatchesComponent } from './components/matches/matches.component';
+import { ArticlesResolverService } from './components/shared/resolvers/articles-resolver.service';
+import { ContactsResolverService } from './components/shared/resolvers/contacts-resolver.service';
 import { TournamentsComponent } from './components/tournaments/tournaments.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
-  { path: 'home', component: HomeComponent },
-  { path: 'blog', component: BlogComponent, children:[
+  { path: 'home', component: HomeComponent, resolve: [ArticlesResolverService] },
+  { path: 'blog', component: BlogComponent, resolve: [ArticlesResolverService],
+   children:[
     { path: '', component: PreviewPageComponent, pathMatch: 'full' },
     { path: ':id', component: ArticleComponent }
   ] },
   { path: 'categories', component: CategoriesComponent},
-  { path: 'contact', component: ContactComponent},
+  { path: 'contact', component: ContactComponent, resolve: [ContactsResolverService]},
   { path: 'matches', component: MatchesComponent},
   { path: 'tournaments', component: TournamentsComponent}
 ];

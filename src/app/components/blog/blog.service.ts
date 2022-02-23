@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
-import { Article } from "../shared/article.model";
-import { SharedService } from "../shared/shared.service";
+import { Article } from "../shared/models/article.model";
+import { DataService } from "../shared/data.service";
 
 @Injectable({
   providedIn: 'root'
@@ -8,10 +8,10 @@ import { SharedService } from "../shared/shared.service";
 
 export class BlogService{
 
-  constructor( private sharedService : SharedService ){}
+  constructor( private dataService : DataService ){}
 
   getArticles(){
-    return this.sharedService.getArticles();
+    return this.dataService.getArticles();
   }
 
   getArticle( id : number ) : Article{

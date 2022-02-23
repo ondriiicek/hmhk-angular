@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Article } from 'src/app/components/shared/article.model';
+import { Article } from 'src/app/components/shared/models/article.model';
 
 @Component({
   selector: 'app-preview',
