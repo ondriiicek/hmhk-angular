@@ -13,6 +13,6 @@ export class LatestArticlesComponent implements OnInit {
   constructor( private homeService : HomeService ) { }
 
   ngOnInit(): void {
-    this.articles = this.homeService.getArticles();
+    this.articles = this.homeService.getMostRecentArticles();
   }
 }

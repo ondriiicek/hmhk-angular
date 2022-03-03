@@ -3,21 +3,29 @@
 <p>Latest breaking news, pictures, videos, and special reports </p>
 
 <div class="row latest-articles">
+  
   <div class="col-md-6" *ngFor="let article of articles">
     <div class="card mb-3">
-      <img [src]="article.previewImage" class="card-img-top" alt="">
+      <img [src]="article.previewImage" class="card-img-top" [alt]="article.author">
+
       <div class="card-body p-0 mt-4">
-        <a><h5 class="card-title hover-underline-animation">{{ article.title }}</h5></a>
+        <a [routerLink]="['/blog/', article.id]">
+          <h5 class="card-title hover-underline-animation">{{ article.title }}</h5>
+        </a>
+
         <p> {{ article.content[1].content }}</p>
+
         <div class="row">
           <div class="col-8">
             <img class="author-image rounded-circle" [src]="article.authorImage" [alt]="article.author">
             <p class="d-inline ms-2 author-name">by <span>{{ article.author }}</span></p>
           </div>
+
           <div class="col-4 text-end pt-2">
             <p>{{article.date | date:'dd.LL.yyyy'}}</p>
           </div>
         </div>
+
       </div>
     </div>
   </div>

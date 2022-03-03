@@ -16,6 +16,9 @@ export class BlogService{
 
   getArticle( id : number ) : Article{
     const articles = this.getArticles();
+    console.log(articles);
+    
+    
     let currentArticle : Article;
 
     articles.forEach( 

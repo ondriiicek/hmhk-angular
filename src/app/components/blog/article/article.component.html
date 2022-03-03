@@ -1,11 +1,24 @@
-<div class="skuska">
-  <h1>{{ article.author }}</h1>
-  <h2>{{ article.date }}</h2>
-  <p>{{ article.title}}</p>
+<div class="wrapper">
+  <header>
+    <div class="cover" [ngStyle]="{'background-image': getImage()}">
+      <div class="overlay">
+        <app-badge [content]="article.typeOf"></app-badge>
+        <h1 class="my-3">{{article.title}}</h1>
+        <ul class="article-info">
+          <li><img [src]="article.authorImage" [alt]="article.author"></li>
+          <li>{{article.author}}</li>
+          <li>{{article.date | date:'dd.LL.YYYY'}}</li>
+        </ul>
+      </div>
+    </div>
+  </header>
 
-  <ul>
-    <li *ngFor="let paragraph of article.content">
-      <p>{{ paragraph.content}}</p>
-    </li>
-  </ul>
+  <main class="mt-5">
+    <ul>
+      <li *ngFor="let paragraph of article.content; let i = index">
+        <p [ngClass]="{'bolder': i % 2 === 0}">{{ paragraph.content }}</p>
+      </li>
+    </ul>
+  </main>
 </div>
+

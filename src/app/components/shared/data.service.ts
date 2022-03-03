@@ -28,7 +28,7 @@ export class DataService{
 
     return this.http.get<Article[]>(url).pipe(
       tap( articles => {
-        this.articles = articles;
+        this.articles = this.sortByDate(articles);
       })
     );
   }
@@ -41,6 +41,13 @@ export class DataService{
         this.contacts = contacts;
       })
     )
+  }
+
+  //preusporiada, clanok ktory je najnovsi (datumovo) bude v poli prvy
+  private sortByDate( articles : Article[] ){
+    return articles.sort((a : Article, b: Article) => {
+      return <any>new Date(b.date) - <any>new Date(a.date);
+    });
   }
 
   // newArticles : Article[] =[
