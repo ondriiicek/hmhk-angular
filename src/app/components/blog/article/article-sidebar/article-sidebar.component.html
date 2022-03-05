@@ -1,0 +1,15 @@
+<h3 class="mb-3 ms-1">Podobné články</h3>
+
+<a [routerLink]="['../', preview.id ]">
+  <div class="sidebar-card">
+    <img [src]="preview.previewImage" alt="">
+    <div class="title">
+      <p> <span>{{ preview.title }}: </span> {{ preview.content[1].content | truncate:10}}</p>
+    </div>
+  </div>
+</a>
+
+<div class="arrows">
+  <a (click)="onPreviousPreview()"><i class="fa-solid fa-angle-left"></i></a>
+  <a (click)="onNextPreview()"><i class="fa-solid fa-angle-right"></i></a>
+</div>

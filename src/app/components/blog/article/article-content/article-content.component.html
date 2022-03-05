@@ -1,0 +1,7 @@
+<main>
+  <ul>
+    <li *ngFor="let paragraph of article.content; let i = index">
+      <p [ngClass]="{'bolder': i % 2 === 0}">{{ paragraph.content }}</p>
+    </li>
+  </ul>
+</main>

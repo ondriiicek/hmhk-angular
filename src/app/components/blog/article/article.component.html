@@ -1,24 +1,5 @@
-<div class="wrapper">
-  <header>
-    <div class="cover" [ngStyle]="{'background-image': getImage()}">
-      <div class="overlay">
-        <app-badge [content]="article.typeOf"></app-badge>
-        <h1 class="my-3">{{article.title}}</h1>
-        <ul class="article-info">
-          <li><img [src]="article.authorImage" [alt]="article.author"></li>
-          <li>{{article.author}}</li>
-          <li>{{article.date | date:'dd.LL.YYYY'}}</li>
-        </ul>
-      </div>
-    </div>
-  </header>
-
-  <main class="mt-5">
-    <ul>
-      <li *ngFor="let paragraph of article.content; let i = index">
-        <p [ngClass]="{'bolder': i % 2 === 0}">{{ paragraph.content }}</p>
-      </li>
-    </ul>
-  </main>
+<app-article-header [article]="article"></app-article-header>
+<div class="main-content">
+  <app-article-content [article]="article"></app-article-content>
+  <app-article-sidebar [id]="article.id"></app-article-sidebar>
 </div>
-

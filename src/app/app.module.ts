@@ -34,6 +34,11 @@ import { PreviewComponent } from './components/blog/preview-page/preview/preview
 import { ArticleComponent } from './components/blog/article/article.component';
 import { BadgeComponent } from './components/shared/components/badge/badge.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ArticleHeaderComponent } from './components/blog/article/article-header/article-header.component';
+import { ArticleContentComponent } from './components/blog/article/article-content/article-content.component';
+import { ArticleFooterComponent } from './components/blog/article/article-footer/article-footer.component';
+import { ArticleSidebarComponent } from './components/blog/article/article-sidebar/article-sidebar.component';
+import { TruncatePipe } from './components/shared/pipes/truncate.pipe';
 
 
 @NgModule({
@@ -67,7 +72,12 @@ import { HttpClientModule } from '@angular/common/http';
     PreviewPageComponent,
     PreviewComponent,
     ArticleComponent,
-    BadgeComponent
+    BadgeComponent,
+    ArticleHeaderComponent,
+    ArticleContentComponent,
+    ArticleFooterComponent,
+    ArticleSidebarComponent,
+    TruncatePipe
   ],
   imports: [
     BrowserModule,

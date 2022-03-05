@@ -21,11 +21,6 @@ export class ArticleComponent implements OnInit {
         this.article = this.blogService.getArticle(id);
       }
     )
-    
-  }
-
-  getImage(){
-    return "url('" + this.article.previewImage + "')";
   }
 
 }

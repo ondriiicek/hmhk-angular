@@ -1,0 +1,12 @@
+<header>
+  <div class="cover" [ngStyle]="{'background-image': getImage()}">
+    <div class="overlay">
+      <h1 class="my-3">{{article.title}}</h1>
+      <ul class="article-info">
+        <li><img [src]="article.authorImage" [alt]="article.author"></li>
+        <li>{{article.author}}</li>
+        <li>{{article.date | date:'dd.LL.YYYY'}}</li>
+      </ul>
+    </div>
+  </div>
+</header>
