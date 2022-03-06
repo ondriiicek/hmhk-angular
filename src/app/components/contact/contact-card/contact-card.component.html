@@ -1,11 +1,15 @@
 <div class="my-card">
   <div class="card-front" [ngStyle]="{'background-image': getImage()}"></div>
   <div class="card-back">
-    <h3> {{contact.name}}</h3>
-    <h4> {{ contact.position}} </h4>
-    <div class="social-icons">
+    <div class="name-position d-flex flex-column justify-content-center align-items-center">
+      <h2> {{contact.name}}</h2>
+      <h4> {{ contact.position}} </h4>
+    </div>
+    <div class="social-icons d-flex flex-column px-4">
+      <img class="contact-logo my-4 align-self-center" src="/assets/img/logo.png" alt="hmhk-logo">
       <a href=""><i class="fa-solid fa-envelope"></i> <span>{{contact.email}}</span></a>
       <a href=""><i class="fa-solid fa-phone"></i> <span>{{contact.phone}}</span></a>
+      <a href=""><i class="fa-brands fa-facebook-square"></i> <span>{{ contact.name }}</span></a>
     </div>
   </div>
 </div>

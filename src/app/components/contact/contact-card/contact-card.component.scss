@@ -28,33 +28,54 @@
 }
 
 .card-back{
-  height: 50%;
+  height: 100%;
   width: 100%;
   position: absolute;
   text-align-last: left;
-  padding: 1rem;
-  background: $footer-black;
   backface-visibility: hidden;
   transform: rotateX(-180deg);
   transition: 0.5s;
-  color: $secondary-font-color;
   text-align: center;
   border-radius: .4rem;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+  .name-position{
 
-.social-icons{
-  margin-top: 1rem;
-  a{
-    display: block;
-    color: $secondary-font-color;
-    text-decoration: none;
+    
+    background: #d9d9d9;
+    color: #000;
+    border-radius: .4rem .4rem 0 0;
+    height: 35%;
+
+    h2{
+      font-size: 1.7rem;
+    }
   }
-  span{
-    margin-left: .5rem;
+
+  .social-icons{
+    height: 65%;
+    border-radius: 0 0 .4rem .4rem;
+    background: lighten( #000, 8%);
+
+
+    .contact-logo{
+      width: 7rem;
+    }
+    a{
+      display: block;
+      color: $secondary-font-color;
+      text-decoration: none;
+      font-weight: 200;
+      &:not(:last-child){
+        margin-bottom: .3rem;
+      }
+    }
+    span{
+      margin-left: 1rem;
+    }
+    .fa-solid,
+    .fa-brands{
+      font-size: 1.2rem;
+
+    }
   }
 }
