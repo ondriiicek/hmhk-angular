@@ -1,0 +1,18 @@
+@import 'src/assets/scss/_variables.scss';
+
+.head{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: $red;
+  color: $secondary-font-color;
+
+  a{
+    text-decoration: underline;
+    font-size: .8rem;
+  }
+  h6{
+    margin: 0;
+    font-size: .9rem;
+  }
+}

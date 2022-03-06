@@ -1,0 +1,25 @@
+<section class="table-body">
+  <app-table-head></app-table-head>
+  
+  <div *ngFor="let match of tableData; let i = index" 
+    class="ended-matches d-flex justify-content-between px-4 mt-2 "
+    [ngClass]="i === tableData.length-1 ? 'no-border' : ''">
+
+    <div class="ended-matches__left d-flex">
+      <span class="align-self-center me-5">{{ match.status }}</span>
+      <div class="teams">
+        <p class="m-0" [ngClass]="match.homeTeam.goals > match.awayTeam.goals ? 'winner' : ''">{{ match.homeTeam.name }}</p>
+        <p class="m-0" [ngClass]="match.homeTeam.goals > match.awayTeam.goals ? '' : 'winner'">{{ match.awayTeam.name }}</p>
+      </div>
+    </div>
+
+    <div class="ended-matches__right d-flex">
+      <div class="score mb-2 me-5">
+        <p class="m-0">{{ match.homeTeam.goals }}</p>
+        <p class="m-0">{{ match.awayTeam.goals }}</p>
+      </div>
+      <span class="date align-self-center">23.2.2022</span>
+    </div>
+  </div>
+
+</section>

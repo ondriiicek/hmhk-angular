@@ -1,0 +1,12 @@
+@import 'src/assets/scss/_variables.scss';
+
+.btn{
+  font-size: .8rem;
+  font-weight: 500;
+  border-radius: .6rem;
+}
+
+.activated-button{
+  background: $red;
+  color: $secondary-font-color;
+}

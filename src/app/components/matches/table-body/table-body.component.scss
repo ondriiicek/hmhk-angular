@@ -1,0 +1,16 @@
+.table-body{
+  margin-top: 1rem;
+  .ended-matches{
+    font-size: .8rem;
+    border-bottom: 1px solid #B9BCC1;
+    .winner,
+    .score{
+      font-weight: 600;
+    }
+    
+  }
+
+  .no-border{
+    border: none;
+  }
+}

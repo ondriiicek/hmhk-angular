@@ -39,6 +39,9 @@ import { ArticleContentComponent } from './components/blog/article/article-conte
 import { ArticleFooterComponent } from './components/blog/article/article-footer/article-footer.component';
 import { ArticleSidebarComponent } from './components/blog/article/article-sidebar/article-sidebar.component';
 import { TruncatePipe } from './components/shared/pipes/truncate.pipe';
+import { TableHeadComponent } from './components/matches/table-head/table-head.component';
+import { TableButtonsComponent } from './components/matches/table-buttons/table-buttons.component';
+import { TableBodyComponent } from './components/matches/table-body/table-body.component';
 
 
 @NgModule({
@@ -77,7 +80,10 @@ import { TruncatePipe } from './components/shared/pipes/truncate.pipe';
     ArticleContentComponent,
     ArticleFooterComponent,
     ArticleSidebarComponent,
-    TruncatePipe
+    TruncatePipe,
+    TableHeadComponent,
+    TableButtonsComponent,
+    TableBodyComponent
   ],
   imports: [
     BrowserModule,

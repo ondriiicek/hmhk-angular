@@ -4,6 +4,7 @@ import { HttpClient } from "@angular/common/http";
 import { tap } from "rxjs/operators";
 import { Contact } from "./models/contact.model";
 import { ArticleContent } from "./models/article-content.model";
+import { MatchStats } from "./models/matches-table.model";
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +13,7 @@ import { ArticleContent } from "./models/article-content.model";
 export class DataService{
   private articles : Article[] = [];
   private contacts : Contact[] = [];
+  private matchTable : MatchStats[] = [];
 
   constructor( private http : HttpClient ){}
 
@@ -21,6 +23,10 @@ export class DataService{
 
   getContacts(){
     return this.contacts.slice();
+  }
+
+  getMatchTable(){
+    return this.matchTable.slice();
   }
 
   fetchArticles(){
@@ -41,6 +47,49 @@ export class DataService{
         this.contacts = contacts;
       })
     )
+  }
+
+  fetchMatchesU12(){
+    const url = 'https://hmhk-4b0d7-default-rtdb.firebaseio.com/matches-U12.json';
+    return this.http.get<MatchStats[]>(url).pipe(
+      tap( table => {
+        this.handleMatchTable(table);
+      })
+    )
+  }
+
+  fetchMatchesU17(){
+    const url = 'https://hmhk-4b0d7-default-rtdb.firebaseio.com/matches-U17.json';
+    return this.http.get<MatchStats[]>(url).pipe(
+      tap( table => {
+        this.handleMatchTable(table);
+      })
+    )
+  }
+
+  fetchMatchesU20(){
+    const url = 'https://hmhk-4b0d7-default-rtdb.firebaseio.com/matches-U20.json';
+    return this.http.get<MatchStats[]>(url).pipe(
+      tap( table => {
+        this.handleMatchTable(table);
+      })
+    )
+  }
+
+  fetchMatchesSenior(){
+    const url = 'https://hmhk-4b0d7-default-rtdb.firebaseio.com/matches-senior.json';
+    return this.http.get<MatchStats[]>(url).pipe(
+      tap( table => {
+        this.handleMatchTable(table);
+      })
+    )
+  }
+
+  private handleMatchTable( responseTableData : MatchStats[] ){
+    if( this.matchTable.length > 0 ){
+      this.matchTable.splice(0,this.matchTable.length);
+    }
+    this.matchTable = responseTableData;
   }
 
   //preusporiada, clanok ktory je najnovsi (datumovo) bude v poli prvy
