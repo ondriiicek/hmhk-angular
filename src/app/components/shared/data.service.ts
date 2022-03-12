@@ -50,7 +50,7 @@ export class DataService{
   }
 
   fetchMatchesU12(){
-    const url = 'https://hmhk-4b0d7-default-rtdb.firebaseio.com/matches-U12.json';
+    const url = 'http://localhost:3000/end-U12';
     return this.http.get<MatchStats[]>(url).pipe(
       tap( table => {
         this.handleMatchTable(table);
@@ -59,7 +59,7 @@ export class DataService{
   }
 
   fetchMatchesU17(){
-    const url = 'https://hmhk-4b0d7-default-rtdb.firebaseio.com/matches-U17.json';
+    const url = 'http://localhost:3000/end-U17';
     return this.http.get<MatchStats[]>(url).pipe(
       tap( table => {
         this.handleMatchTable(table);
@@ -68,7 +68,7 @@ export class DataService{
   }
 
   fetchMatchesU20(){
-    const url = 'https://hmhk-4b0d7-default-rtdb.firebaseio.com/matches-U20.json';
+    const url = 'http://localhost:3000/end-U20';
     return this.http.get<MatchStats[]>(url).pipe(
       tap( table => {
         this.handleMatchTable(table);
@@ -77,7 +77,42 @@ export class DataService{
   }
 
   fetchMatchesSenior(){
-    const url = 'https://hmhk-4b0d7-default-rtdb.firebaseio.com/matches-senior.json';
+    const url = 'http://localhost:3000/end-senior';
+    return this.http.get<MatchStats[]>(url).pipe(
+      tap( table => {
+        this.handleMatchTable(table);
+      })
+    )
+  }
+
+  fetchScheduleU12(){
+    const url = 'http://localhost:3000/schedule-U12';
+    return this.http.get<MatchStats[]>(url).pipe(
+      tap( table => {
+        this.handleMatchTable(table);
+      })
+    )
+  }
+
+  fetchScheduleU17(){
+    const url = 'http://localhost:3000/schedule-U17';
+    return this.http.get<MatchStats[]>(url).pipe(
+      tap( table => {
+        this.handleMatchTable(table);
+      })
+    )
+  }
+  fetchScheduleU20(){
+    const url = 'http://localhost:3000/schedule-U20';
+    return this.http.get<MatchStats[]>(url).pipe(
+      tap( table => {
+        this.handleMatchTable(table);
+      })
+    )
+  }
+
+  fetchScheduleSenior(){
+    const url = 'http://localhost:3000/schedule-senior';
     return this.http.get<MatchStats[]>(url).pipe(
       tap( table => {
         this.handleMatchTable(table);

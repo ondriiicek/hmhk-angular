@@ -10,4 +10,12 @@ img{
   font-weight: 500;
 }
 
+.matches{
+  position: relative;
+}
+
+.hover-color:hover{
+  color: $red;
+}
+
 @include link-hover-animation();

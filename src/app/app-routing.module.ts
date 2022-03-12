@@ -6,6 +6,7 @@ import { PreviewPageComponent } from './components/blog/preview-page/preview-pag
 import { CategoriesComponent } from './components/categories/categories.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { HomeComponent } from './components/home/home.component';
+import { LeagueTableComponent } from './components/league-table/league-table.component';
 import { MatchesComponent } from './components/matches/matches.component';
 import { TableBodyComponent } from './components/matches/table-body/table-body.component';
 import { ArticlesResolverService } from './components/shared/resolvers/articles-resolver.service';
@@ -14,6 +15,10 @@ import { MatchesSeniorResolverService } from './components/shared/resolvers/matc
 import { MatchesU12ResolverService } from './components/shared/resolvers/matches-u12-resolver.service';
 import { MatchesU17ResolverService } from './components/shared/resolvers/matches-u17-resolver.service';
 import { MatchesU20ResolverService } from './components/shared/resolvers/matches-u20-resolver.service';
+import { ScheduleSeniorResolverService } from './components/shared/resolvers/schedule-senior-resolver.service';
+import { ScheduleU12ResolverService } from './components/shared/resolvers/schedule-u12-resolver.service';
+import { ScheduleU17ResolverService } from './components/shared/resolvers/schedule-u17-resolver.service';
+import { ScheduleU20ResolverService } from './components/shared/resolvers/schedule-u20-resolver.service';
 import { TournamentsComponent } from './components/tournaments/tournaments.component';
 
 const routes: Routes = [
@@ -27,16 +32,27 @@ const routes: Routes = [
   },
   { path: 'kategorie', component: CategoriesComponent},
   { path: 'kontakt', component: ContactComponent, resolve: [ContactsResolverService]},
-  { path: 'zapasy', component: MatchesComponent,
+  { path: 'odohrate-zapasy', component: MatchesComponent,
     children:[
       { path: '', redirectTo: 'muzi', pathMatch: 'full'},
       { path: 'U12', component: TableBodyComponent, resolve: [MatchesU12ResolverService] },
-      { path: 'U17', component: TableBodyComponent, resolve: [MatchesU17ResolverService]},
-      { path: 'U20', component: TableBodyComponent, resolve: [MatchesU20ResolverService]},
-      { path: 'muzi', component: TableBodyComponent, resolve: [MatchesSeniorResolverService] }
+      { path: 'U17', component: TableBodyComponent, resolve: [MatchesU17ResolverService] },
+      { path: 'U20', component: TableBodyComponent, resolve: [MatchesU20ResolverService] },
+      { path: 'muzi', component: TableBodyComponent, resolve: [MatchesSeniorResolverService] },
+      { path: 'tabulka', component: LeagueTableComponent }
     ]
   },
-  { path: 'turnaje', component: TournamentsComponent}
+  { path: 'rozpis-zapasov', component: MatchesComponent,
+    children:[
+      { path: '', redirectTo: 'muzi', pathMatch: 'full'},
+      { path: 'U12', component: TableBodyComponent, resolve: [ScheduleU12ResolverService] },
+      { path: 'U17', component: TableBodyComponent, resolve: [ScheduleU17ResolverService] },
+      { path: 'U20', component: TableBodyComponent, resolve: [ScheduleU20ResolverService] },
+      { path: 'muzi', component: TableBodyComponent, resolve: [ScheduleSeniorResolverService] },
+    ]
+  },
+  { path: 'turnaje', component: TournamentsComponent},
+  { path: 'tabulka', component: LeagueTableComponent }
 ];
 
 @NgModule({

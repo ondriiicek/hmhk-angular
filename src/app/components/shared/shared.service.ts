@@ -9,8 +9,6 @@ import { Article } from "./models/article.model";
 export class SharedService{
 
   constructor( private dataService : DataService ){}
-
-  
   getTitles() : string[]{
     const titles : string[] = [];
     const articles : Article[] = this.dataService.getArticles().slice();

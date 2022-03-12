@@ -1,0 +1,233 @@
+
+{
+  "end-senior":[
+    {
+      "status": "Koniec",
+      "homeTeam": {
+        "name":"HMHK Vranov nad Toplou",
+        "goals":"5"
+      },
+      "awayTeam": {
+        "name":"LG Bratislava",
+        "goals":"3"
+      },
+      "date": "12.8.2022"
+    },
+    {
+      "status": "Koniec",
+      "homeTeam": {
+        "name":"HMHK Vranov nad Toplou",
+        "goals":"5"
+      },
+      "awayTeam": {
+        "name":"LG Bratislava",
+        "goals":"0"
+      },
+      "date": "12.8.2022"
+    },
+    {
+      "status": "Koniec",
+      "homeTeam": {
+        "name":"HMHK Vranov nad Toplou",
+        "goals":"5"
+      },
+      "awayTeam": {
+        "name":"LG Bratislava",
+        "goals":"6"
+      },
+      "date": "12.8.2022"
+    }
+  ],
+  "end-U20":[
+    {
+      "status": "Koniec",
+      "homeTeam": {
+        "name":"HMHK Vranov nad Toplou U20",
+        "goals":"5"
+      },
+      "awayTeam": {
+        "name":"Trebisov U20",
+        "goals":"3"
+      },
+      "date": "12.8.2022"
+    },
+    {
+      "status": "Koniec",
+      "homeTeam": {
+        "name":"HMHK Vranov nad Toplou U20",
+        "goals":"5"
+      },
+      "awayTeam": {
+        "name":"Trebisov U20",
+        "goals":"0"
+      },
+      "date": "12.8.2022"
+    },
+    {
+      "status": "Koniec",
+      "homeTeam": {
+        "name":"HMHK Vranov nad Toplou U20",
+        "goals":"5"
+      },
+      "awayTeam": {
+        "name":"Trebisov U20",
+        "goals":"6"
+      },
+      "date": "12.8.2022"
+    }
+  ],
+  "end-U17":[
+    {
+      "status": "Koniec",
+      "homeTeam": {
+        "name":"HMHK Vranov nad Toplou U17",
+        "goals":"5"
+      },
+      "awayTeam": {
+        "name":"Povazska Bystrica U17",
+        "goals":"3"
+      },
+      "date": "12.8.2022"
+    },
+    {
+      "status": "Koniec",
+      "homeTeam": {
+        "name":"HMHK Vranov nad Toplou U17",
+        "goals":"5"
+      },
+      "awayTeam": {
+        "name":"Povazska Bystrica U17",
+        "goals":"0"
+      },
+      "date": "12.8.2022"
+    },
+    {
+      "status": "Koniec",
+      "homeTeam": {
+        "name":"HMHK Vranov nad Toplou U17",
+        "goals":"5"
+      },
+      "awayTeam": {
+        "name":"Povazska Bystrica U17",
+        "goals":"6"
+      },
+      "date": "12.8.2022"
+    }
+  ],
+  "end-U12":[
+    {
+      "status": "Koniec",
+      "homeTeam": {
+        "name":"HMHK Vranov nad Toplou U12",
+        "goals":"5"
+      },
+      "awayTeam": {
+        "name":"Kosice U12",
+        "goals":"3"
+      },
+      "date": "12.8.2022"
+    },
+    {
+      "status": "Koniec",
+      "homeTeam": {
+        "name":"HMHK Vranov nad Toplou U12",
+        "goals":"5"
+      },
+      "awayTeam": {
+        "name":"Kosice U12",
+        "goals":"0"
+      },
+      "date": "12.8.2022"
+    },
+    {
+      "status": "Koniec",
+      "homeTeam": {
+        "name":"HMHK Vranov nad Toplou U12",
+        "goals":"5"
+      },
+      "awayTeam": {
+        "name":"Kosice U12",
+        "goals":"6"
+      },
+      "date": "12.8.2022"
+    }
+  ],
+  "schedule-U12":[
+    {
+      "status": "10:50",
+      "homeTeam": {
+        "name":"HMHK Vranov nad Toplou U12",
+        "goals":"-"
+      },
+      "awayTeam": {
+        "name":"Kosice U12",
+        "goals":"-"
+      },
+      "date": "12.8.2022"
+    }
+  ],
+  "schedule-U17":[
+    {
+      "status": "10:50",
+      "homeTeam": {
+        "name":"HMHK Vranov nad Toplou U17",
+        "goals":"-"
+      },
+      "awayTeam": {
+        "name":"Kosice U17",
+        "goals":"-"
+      },
+      "date": "12.8.2022"
+    }
+  ],
+  "schedule-U20":[
+    {
+      "status": "10:50",
+      "homeTeam": {
+        "name":"HMHK Vranov nad Toplou U20",
+        "goals":"-"
+      },
+      "awayTeam": {
+        "name":"Kosice U20",
+        "goals":"-"
+      },
+      "date": "12.8.2022"
+    }
+  ],
+  "schedule-senior":[
+    {
+      "status": "10:50",
+      "homeTeam": {
+        "name":"HMHK Vranov nad Toplou",
+        "goals":"-"
+      },
+      "awayTeam": {
+        "name":"Kosice",
+        "goals":"-"
+      },
+      "date": "12.8.2022"
+    }
+  ],
+  "league-table-senior":[
+    {
+      "id": 1,
+      "rank": 1,
+      "club": "Povazska Bystrica",
+      "gp": 16,
+      "w": 15,
+      "l": 1,
+      "otw": 0,
+      "sow": 1,
+      "sol": 0,
+      "otl": 0,
+      "score": "92:28",
+      "pts": 50
+    }
+  ]
+  
+}
+
+
+
+
+

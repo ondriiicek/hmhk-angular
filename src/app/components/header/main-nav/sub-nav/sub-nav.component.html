@@ -1,0 +1,5 @@
+<ul class="sub-nav">
+  <li *ngFor="let link of linksContent">
+    <a (click)="onNavigate(link)" class="hover-underline-animation">{{ link }}</a>
+  </li>
+</ul>

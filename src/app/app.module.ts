@@ -42,6 +42,11 @@ import { TruncatePipe } from './components/shared/pipes/truncate.pipe';
 import { TableHeadComponent } from './components/matches/table-head/table-head.component';
 import { TableButtonsComponent } from './components/matches/table-buttons/table-buttons.component';
 import { TableBodyComponent } from './components/matches/table-body/table-body.component';
+import { ChangeBooleanDirective } from './components/shared/directives/change-boolean.directive';
+import { SubNavComponent } from './components/header/main-nav/sub-nav/sub-nav.component';
+import { LeagueTableComponent } from './components/league-table/league-table.component';
+import { LeagueTableHeadComponent } from './components/league-table/league-table-head/league-table-head.component';
+import { LeagueTableBodyComponent } from './components/league-table/league-table-body/league-table-body.component';
 
 
 @NgModule({
@@ -83,7 +88,12 @@ import { TableBodyComponent } from './components/matches/table-body/table-body.c
     TruncatePipe,
     TableHeadComponent,
     TableButtonsComponent,
-    TableBodyComponent
+    TableBodyComponent,
+    ChangeBooleanDirective,
+    SubNavComponent,
+    LeagueTableComponent,
+    LeagueTableHeadComponent,
+    LeagueTableBodyComponent
   ],
   imports: [
     BrowserModule,

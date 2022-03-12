@@ -7,16 +7,19 @@
           class="nav-link me-2 hover-underline-animation">Domov</a>
       </li>
       <li class="nav-item">
-        <a routerLink="kategorie" routerLinkActive="active" 
+        <a routerLink="kategorie"
+          routerLinkActive="active" 
           class="nav-link hover-underline-animation me-2">Kategórie</a>
       </li>
+      
       <li class="nav-item">
         <a routerLink="turnaje" routerLinkActive="active" 
           class="nav-link hover-underline-animation me-2">Turnaje</a>
       </li>
-      <li class="nav-item">
-        <a routerLink="zapasy" routerLinkActive="active" 
-          class="nav-link hover-underline-animation me-2">Zápasy</a>
+      <li class="nav-item matches" (mouseenter)="onHoverMatches()" (mouseleave)="onHoverMatches()">
+        <a routerLinkActive="active" 
+          class="nav-link hover-color me-2">Zápasy</a>
+        <app-sub-nav *ngIf="showMatches" [linksContent]="['Odohraté zápasy', 'Rozpis zápasov']"></app-sub-nav>  
       </li>
       <li class="nav-item">
         <a routerLink="blog" routerLinkActive="active" 
