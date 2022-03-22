@@ -208,20 +208,64 @@
       "date": "12.8.2022"
     }
   ],
-  "league-table-senior":[
+  "tabulka-muzi":[
     {
       "id": 1,
       "rank": 1,
       "club": "Povazska Bystrica",
-      "gp": 16,
-      "w": 15,
-      "l": 1,
-      "otw": 0,
-      "sow": 1,
-      "sol": 0,
-      "otl": 0,
+      "gamePlayed": 16,
+      "win": 15,
+      "lost": 1,
+      "overtimeWin": 0,
+      "shootoutWin": 1,
+      "shootoutLost": 0,
+      "overtimeLost": 0,
       "score": "92:28",
-      "pts": 50
+      "points": 50
+    },
+    {
+      "id": 1,
+      "rank": 2,
+      "club": "Nitra",
+      "gamePlayed": 16,
+      "win": 15,
+      "lost": 1,
+      "overtimeWin": 0,
+      "shootoutWin": 1,
+      "shootoutLost": 0,
+      "overtimeLost": 0,
+      "score": "92:28",
+      "points": 46
+    }
+  ],
+  "tabulka-U20":[
+    {
+      "id": 1,
+      "rank": 1,
+      "club": "Povazska Bystrica U20",
+      "gamePlayed": 16,
+      "win": 15,
+      "lost": 1,
+      "overtimeWin": 0,
+      "shootoutWin": 1,
+      "shootoutLost": 0,
+      "overtimeLost": 0,
+      "score": "92:28",
+      "points": 50
+    },
+    {
+      "id": 1,
+      "rank": 2,
+      "club": "Nitra U20",
+      "gamePlayed": 16,
+      "win": 15,
+      "lost": 1,
+      "overtimeWin": 0,
+      "shootoutWin": 1,
+      "shootoutLost": 0,
+      "overtimeLost": 0,
+      "score": "92:28",
+      "points": 46
     }
   ]
   

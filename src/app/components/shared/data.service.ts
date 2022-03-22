@@ -5,6 +5,7 @@ import { tap } from "rxjs/operators";
 import { Contact } from "./models/contact.model";
 import { ArticleContent } from "./models/article-content.model";
 import { MatchStats } from "./models/matches-table.model";
+import { LeagueTable } from "./models/league-table.model";
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +15,7 @@ export class DataService{
   private articles : Article[] = [];
   private contacts : Contact[] = [];
   private matchTable : MatchStats[] = [];
+  private leagueTable : LeagueTable[] = [];
 
   constructor( private http : HttpClient ){}
 
@@ -27,6 +29,10 @@ export class DataService{
 
   getMatchTable(){
     return this.matchTable.slice();
+  }
+
+  getLeagueTable(){
+    return this.leagueTable.slice();
   }
 
   fetchArticles(){
@@ -120,11 +126,36 @@ export class DataService{
     )
   }
 
+  fetchSeniorTable(){
+    const url = 'http://localhost:3000/tabulka-muzi';
+    return this.http.get<LeagueTable[]>(url).pipe(
+      tap( leagueTable => {
+        this.handleLeaugueTable(leagueTable)
+      })
+    );
+  }
+
+  fetchTableU20(){
+    const url = 'http://localhost:3000/tabulka-U20';
+    return this.http.get<LeagueTable[]>(url).pipe(
+      tap( leagueTable => {
+        this.handleLeaugueTable(leagueTable);
+      })
+    );
+  }
+
   private handleMatchTable( responseTableData : MatchStats[] ){
     if( this.matchTable.length > 0 ){
       this.matchTable.splice(0,this.matchTable.length);
     }
     this.matchTable = responseTableData;
+  }
+
+  private handleLeaugueTable( responseTableData : LeagueTable[] ){
+    if( this.leagueTable.length > 0 ){
+      this.leagueTable.splice(0,this.leagueTable.length);
+    }
+    this.leagueTable = responseTableData;
   }
 
   //preusporiada, clanok ktory je najnovsi (datumovo) bude v poli prvy

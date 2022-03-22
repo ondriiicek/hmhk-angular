@@ -16,23 +16,18 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Larry</td>
-        <td>the Bird</td>
-        <td>@twitter</td>
+      <tr *ngFor="let tableRow of leagueTable">
+        <th scope="row">{{ tableRow.rank }}</th>
+        <td>{{ tableRow.club }}</td>
+        <td>{{ tableRow.gamePlayed }}</td>
+        <td>{{ tableRow.win }}</td>
+        <td>{{ tableRow.lost }}</td>
+        <td>{{ tableRow.overtimeWin }}</td>
+        <td>{{ tableRow.shootoutWin }}</td>
+        <td>{{ tableRow.shootoutLost }}</td>
+        <td>{{ tableRow.overtimeLost }}</td>
+        <td>{{ tableRow.score }}</td>
+        <td>{{ tableRow.points }}</td>
       </tr>
     </tbody>
   </table>

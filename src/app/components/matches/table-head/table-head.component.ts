@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
+import { DataService } from '../../shared/data.service';
 import { MatchesService } from '../matches.service';
 
 @Component({
@@ -11,14 +12,20 @@ export class TableHeadComponent implements OnInit {
   categorie! : string;
 
   constructor( private matchesService : MatchesService,
-               private router : Router ) { }
+               private router : Router,
+               private dataService : DataService ) { }
 
   ngOnInit(): void {
     this.categorie = this.matchesService.getCategorie();
   }
 
   showLeagueTable(){
-    this.router.navigate(['tabulka'])
+    let categorie : string | string[] = this.router.url;
+    categorie = categorie.split('/');
+    categorie = categorie[categorie.length - 1];    
+    categorie = 'tabulka-' + categorie;  
+      
+    this.router.navigate([categorie])
   }
 
 }

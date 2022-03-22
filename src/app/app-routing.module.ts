@@ -11,14 +11,16 @@ import { MatchesComponent } from './components/matches/matches.component';
 import { TableBodyComponent } from './components/matches/table-body/table-body.component';
 import { ArticlesResolverService } from './components/shared/resolvers/articles-resolver.service';
 import { ContactsResolverService } from './components/shared/resolvers/contacts-resolver.service';
-import { MatchesSeniorResolverService } from './components/shared/resolvers/matches-senior-resolver.service';
-import { MatchesU12ResolverService } from './components/shared/resolvers/matches-u12-resolver.service';
-import { MatchesU17ResolverService } from './components/shared/resolvers/matches-u17-resolver.service';
-import { MatchesU20ResolverService } from './components/shared/resolvers/matches-u20-resolver.service';
-import { ScheduleSeniorResolverService } from './components/shared/resolvers/schedule-senior-resolver.service';
-import { ScheduleU12ResolverService } from './components/shared/resolvers/schedule-u12-resolver.service';
-import { ScheduleU17ResolverService } from './components/shared/resolvers/schedule-u17-resolver.service';
-import { ScheduleU20ResolverService } from './components/shared/resolvers/schedule-u20-resolver.service';
+import { MatchesSeniorResolverService } from './components/shared/resolvers/ended-matches/matches-senior-resolver.service';
+import { MatchesU12ResolverService } from './components/shared/resolvers/ended-matches/matches-u12-resolver.service';
+import { MatchesU17ResolverService } from './components/shared/resolvers/ended-matches/matches-u17-resolver.service';
+import { MatchesU20ResolverService } from './components/shared/resolvers/ended-matches/matches-u20-resolver.service';
+import { LeaugueTableU20Resolver } from './components/shared/resolvers/league-table/league-table-U20.resolver';
+import { LeagueTableResolver } from './components/shared/resolvers/league-table/league-table.resolver';
+import { ScheduleSeniorResolverService } from './components/shared/resolvers/schedule/schedule-senior-resolver.service';
+import { ScheduleU12ResolverService } from './components/shared/resolvers/schedule/schedule-u12-resolver.service';
+import { ScheduleU17ResolverService } from './components/shared/resolvers/schedule/schedule-u17-resolver.service';
+import { ScheduleU20ResolverService } from './components/shared/resolvers/schedule/schedule-u20-resolver.service';
 import { TournamentsComponent } from './components/tournaments/tournaments.component';
 
 const routes: Routes = [
@@ -52,7 +54,10 @@ const routes: Routes = [
     ]
   },
   { path: 'turnaje', component: TournamentsComponent},
-  { path: 'tabulka', component: LeagueTableComponent }
+  { path: 'tabulka-muzi', component: LeagueTableComponent, resolve: [LeagueTableResolver] },
+  { path: 'tabulka-U12', component: LeagueTableComponent },
+  { path: 'tabulka-U17', component: LeagueTableComponent },
+  { path: 'tabulka-U20', component: LeagueTableComponent, resolve: [LeaugueTableU20Resolver] }
 ];
 
 @NgModule({

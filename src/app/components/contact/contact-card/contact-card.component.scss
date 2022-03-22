@@ -7,11 +7,11 @@
 }
 
 .my-card:hover .card-front{
-  transform: rotateX(-180deg);
+  transform: rotateX(0deg);
 }
 
 .my-card:hover .card-back{
-  transform: rotateX(0deg);
+  transform: rotateX(-180deg);
 }
 
 .card-front{
@@ -22,7 +22,7 @@
   position: absolute;
 
   backface-visibility: hidden;
-  transform: rotateX(0deg);
+  transform: rotateX(-180deg);
   transition: .5s;
   border-radius: .4rem;
 }
@@ -33,7 +33,7 @@
   position: absolute;
   text-align-last: left;
   backface-visibility: hidden;
-  transform: rotateX(-180deg);
+  transform: rotateX(0deg);
   transition: 0.5s;
   text-align: center;
   border-radius: .4rem;
@@ -45,9 +45,11 @@
     color: #000;
     border-radius: .4rem .4rem 0 0;
     height: 35%;
-
     h2{
       font-size: 1.7rem;
+    }
+    h2,h4{
+      font-weight: 300;
     }
   }
 
