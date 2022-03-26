@@ -10,6 +10,6 @@ import { MatchStats } from '../../models/matches-table.model';
 export class ScheduleU20ResolverService {
   constructor( private dataService : DataService ) { }
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): MatchStats[] | Observable<MatchStats[]> | Promise<MatchStats[]> {
-    return this.dataService.fetchScheduleU20();
+    return this.dataService.fetchSchedule('http://localhost:3000/schedule-U20');
   }
 }

@@ -1,6 +1,6 @@
 <div class="container">
-  <table class="table">
-    <thead>
+  <table class="table mx-auto">
+    <thead class="rounded">
       <tr>
         <th scope="col">Por.</th>
         <th scope="col">Klub</th>
@@ -16,8 +16,8 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let tableRow of leagueTable">
-        <th scope="row">{{ tableRow.rank }}</th>
+      <tr *ngFor="let tableRow of leagueTable; let i = index">
+        <td class="rank "><span [ngClass]="{'first-three': i < 3}">{{tableRow.rank}}</span></td>
         <td>{{ tableRow.club }}</td>
         <td>{{ tableRow.gamePlayed }}</td>
         <td>{{ tableRow.win }}</td>

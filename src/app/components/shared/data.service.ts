@@ -35,6 +35,7 @@ export class DataService{
     return this.leagueTable.slice();
   }
 
+  //vsetky clanky pre blog
   fetchArticles(){
     const url = 'https://hmhk-4b0d7-default-rtdb.firebaseio.com/articles.json';
 
@@ -45,6 +46,7 @@ export class DataService{
     );
   }
 
+  //Kontakty pre contact page
   fetchContacts(){
     const url ='https://hmhk-4b0d7-default-rtdb.firebaseio.com/contacts.json';
 
@@ -55,8 +57,8 @@ export class DataService{
     )
   }
 
-  fetchMatchesU12(){
-    const url = 'http://localhost:3000/end-U12';
+  //Odohrate zapasy, natiahne ich resolver pre danu kategoriu
+  fetchMatches( url : string ){
     return this.http.get<MatchStats[]>(url).pipe(
       tap( table => {
         this.handleMatchTable(table);
@@ -64,8 +66,8 @@ export class DataService{
     )
   }
 
-  fetchMatchesU17(){
-    const url = 'http://localhost:3000/end-U17';
+  //Program zapasov, natiahne ich resolver pre danu kategoriu
+  fetchSchedule( url : string ){
     return this.http.get<MatchStats[]>(url).pipe(
       tap( table => {
         this.handleMatchTable(table);
@@ -73,61 +75,8 @@ export class DataService{
     )
   }
 
-  fetchMatchesU20(){
-    const url = 'http://localhost:3000/end-U20';
-    return this.http.get<MatchStats[]>(url).pipe(
-      tap( table => {
-        this.handleMatchTable(table);
-      })
-    )
-  }
-
-  fetchMatchesSenior(){
-    const url = 'http://localhost:3000/end-senior';
-    return this.http.get<MatchStats[]>(url).pipe(
-      tap( table => {
-        this.handleMatchTable(table);
-      })
-    )
-  }
-
-  fetchScheduleU12(){
-    const url = 'http://localhost:3000/schedule-U12';
-    return this.http.get<MatchStats[]>(url).pipe(
-      tap( table => {
-        this.handleMatchTable(table);
-      })
-    )
-  }
-
-  fetchScheduleU17(){
-    const url = 'http://localhost:3000/schedule-U17';
-    return this.http.get<MatchStats[]>(url).pipe(
-      tap( table => {
-        this.handleMatchTable(table);
-      })
-    )
-  }
-  fetchScheduleU20(){
-    const url = 'http://localhost:3000/schedule-U20';
-    return this.http.get<MatchStats[]>(url).pipe(
-      tap( table => {
-        this.handleMatchTable(table);
-      })
-    )
-  }
-
-  fetchScheduleSenior(){
-    const url = 'http://localhost:3000/schedule-senior';
-    return this.http.get<MatchStats[]>(url).pipe(
-      tap( table => {
-        this.handleMatchTable(table);
-      })
-    )
-  }
-
-  fetchSeniorTable(){
-    const url = 'http://localhost:3000/tabulka-muzi';
+  //Ligova tabulka, natiahne ju resolver pre danu kategoriu
+  fetchLeagueTable( url : string ){
     return this.http.get<LeagueTable[]>(url).pipe(
       tap( leagueTable => {
         this.handleLeaugueTable(leagueTable)
@@ -135,15 +84,9 @@ export class DataService{
     );
   }
 
-  fetchTableU20(){
-    const url = 'http://localhost:3000/tabulka-U20';
-    return this.http.get<LeagueTable[]>(url).pipe(
-      tap( leagueTable => {
-        this.handleLeaugueTable(leagueTable);
-      })
-    );
-  }
-
+  /*
+    TODO: Spojit handleMatchTable a handelLeagueTable do jednej funkcie
+  */
   private handleMatchTable( responseTableData : MatchStats[] ){
     if( this.matchTable.length > 0 ){
       this.matchTable.splice(0,this.matchTable.length);
@@ -164,283 +107,4 @@ export class DataService{
       return <any>new Date(b.date) - <any>new Date(a.date);
     });
   }
-
-  // newArticles : Article[] =[
-  // new Article(
-  //     1,
-  //     "Predstavovanie",
-  //     "Predstavovanie hracov Matej Dzamba",
-  //     "Ondrej Ladomirjak",
-  //     new Date(),
-  //     [
-  //       new ArticleContent( 'Kedy a prečo si začal s hokejbalom ? '),
-
-  //       new ArticleContent( 
-  //         'Hokejbal som hrával už dlhšiu dobu vo voľnom čase s kamarátmi a približne pred 2-3 rokmi za mnou prišiel Maximilián, či by som nemal záujem skúsiť popri hokeji hrať aj hokejbal vo Vranove a odvtedy ho hrávam aj súťažne. '
-  //       ),
-
-  //       new ArticleContent( 'Keďže si z Bardejova, nerozmýšľal si o inom hokejbalovom klube z východného Slovenska ? Alebo Vranov bol pre teba voľba číslo 1 ? '),
-
-  //       new ArticleContent('Popravde som veľmi neriešil kde pôjdem. Zo začiatku som bral hokejbal len ako doplnok k hokeju a keďže do Vranova išli aj viacerí spoluhráči z Bardejova, tak som ani nad inými tímami nerozmýšľal. '
-  //       ),
-
-  //       new ArticleContent( 'Kedy a prečo si začal s hokejbalom ? '),
-
-  //       new ArticleContent( 
-  //         'Hokejbal som hrával už dlhšiu dobu vo voľnom čase s kamarátmi a približne pred 2-3 rokmi za mnou prišiel Maximilián, či by som nemal záujem skúsiť popri hokeji hrať aj hokejbal vo Vranove a odvtedy ho hrávam aj súťažne. '
-  //       ),
-
-  //       new ArticleContent( 'Keďže si z Bardejova, nerozmýšľal si o inom hokejbalovom klube z východného Slovenska ? Alebo Vranov bol pre teba voľba číslo 1 ? '),
-
-  //       new ArticleContent('Popravde som veľmi neriešil kde pôjdem. Zo začiatku som bral hokejbal len ako doplnok k hokeju a keďže do Vranova išli aj viacerí spoluhráči z Bardejova, tak som ani nad inými tímami nerozmýšľal. '
-  //       ),
-
-  //       new ArticleContent( 'Kedy a prečo si začal s hokejbalom ? '),
-
-  //       new ArticleContent( 
-  //         'Hokejbal som hrával už dlhšiu dobu vo voľnom čase s kamarátmi a približne pred 2-3 rokmi za mnou prišiel Maximilián, či by som nemal záujem skúsiť popri hokeji hrať aj hokejbal vo Vranove a odvtedy ho hrávam aj súťažne. '
-  //       ),
-
-  //       new ArticleContent( 'Keďže si z Bardejova, nerozmýšľal si o inom hokejbalovom klube z východného Slovenska ? Alebo Vranov bol pre teba voľba číslo 1 ? '),
-
-  //       new ArticleContent('Popravde som veľmi neriešil kde pôjdem. Zo začiatku som bral hokejbal len ako doplnok k hokeju a keďže do Vranova išli aj viacerí spoluhráči z Bardejova, tak som ani nad inými tímami nerozmýšľal. '
-  //       )
-  //     ],
-  //     "/assets/img/articleTest.jpg",
-  //     "/assets/img/articleTest.jpg",
-  //   ),
-
-  //   new Article(
-  //     2,
-  //     "Zapas",
-  //     "Predstavovanie hracov Simon Cmar",
-  //     "marian",
-  //     new Date(),
-  //     [
-  //       new ArticleContent( 'Kedy a prečo si začal s hokejbalom ? '),
-
-  //       new ArticleContent( 
-  //         'Hokejbal som hrával už dlhšiu dobu vo voľnom čase s kamarátmi a približne pred 2-3 rokmi za mnou prišiel Maximilián, či by som nemal záujem skúsiť popri hokeji hrať aj hokejbal vo Vranove a odvtedy ho hrávam aj súťažne. '
-  //       ),
-
-  //       new ArticleContent( 'Keďže si z Bardejova, nerozmýšľal si o inom hokejbalovom klube z východného Slovenska ? Alebo Vranov bol pre teba voľba číslo 1 ? '),
-
-  //       new ArticleContent('Popravde som veľmi neriešil kde pôjdem. Zo začiatku som bral hokejbal len ako doplnok k hokeju a keďže do Vranova išli aj viacerí spoluhráči z Bardejova, tak som ani nad inými tímami nerozmýšľal. '
-  //       ),
-
-  //       new ArticleContent( 'Kedy a prečo si začal s hokejbalom ? '),
-
-  //       new ArticleContent( 
-  //         'Hokejbal som hrával už dlhšiu dobu vo voľnom čase s kamarátmi a približne pred 2-3 rokmi za mnou prišiel Maximilián, či by som nemal záujem skúsiť popri hokeji hrať aj hokejbal vo Vranove a odvtedy ho hrávam aj súťažne. '
-  //       ),
-
-  //       new ArticleContent( 'Keďže si z Bardejova, nerozmýšľal si o inom hokejbalovom klube z východného Slovenska ? Alebo Vranov bol pre teba voľba číslo 1 ? '),
-
-  //       new ArticleContent('Popravde som veľmi neriešil kde pôjdem. Zo začiatku som bral hokejbal len ako doplnok k hokeju a keďže do Vranova išli aj viacerí spoluhráči z Bardejova, tak som ani nad inými tímami nerozmýšľal. '
-  //       ),
-
-  //       new ArticleContent( 'Kedy a prečo si začal s hokejbalom ? '),
-
-  //       new ArticleContent( 
-  //         'Hokejbal som hrával už dlhšiu dobu vo voľnom čase s kamarátmi a približne pred 2-3 rokmi za mnou prišiel Maximilián, či by som nemal záujem skúsiť popri hokeji hrať aj hokejbal vo Vranove a odvtedy ho hrávam aj súťažne. '
-  //       ),
-
-  //       new ArticleContent( 'Keďže si z Bardejova, nerozmýšľal si o inom hokejbalovom klube z východného Slovenska ? Alebo Vranov bol pre teba voľba číslo 1 ? '),
-
-  //       new ArticleContent('Popravde som veľmi neriešil kde pôjdem. Zo začiatku som bral hokejbal len ako doplnok k hokeju a keďže do Vranova išli aj viacerí spoluhráči z Bardejova, tak som ani nad inými tímami nerozmýšľal. '
-  //       )
-  //     ],
-  //     "/assets/img/articleTest.jpg",
-  //     "/assets/img/articleTest.jpg"
-  //   ),
-
-  //   new Article(
-  //     3,
-  //     "Predstavovanie",
-  //     "Predstavovanie hracov Ondrej Ladomirjak",
-  //     "marian",
-  //     new Date(),
-  //     [
-  //       new ArticleContent( 'Kedy a prečo si začal s hokejbalom ? '),
-
-  //       new ArticleContent( 
-  //         'Hokejbal som hrával už dlhšiu dobu vo voľnom čase s kamarátmi a približne pred 2-3 rokmi za mnou prišiel Maximilián, či by som nemal záujem skúsiť popri hokeji hrať aj hokejbal vo Vranove a odvtedy ho hrávam aj súťažne. '
-  //       ),
-
-  //       new ArticleContent( 'Keďže si z Bardejova, nerozmýšľal si o inom hokejbalovom klube z východného Slovenska ? Alebo Vranov bol pre teba voľba číslo 1 ? '),
-
-  //       new ArticleContent('Popravde som veľmi neriešil kde pôjdem. Zo začiatku som bral hokejbal len ako doplnok k hokeju a keďže do Vranova išli aj viacerí spoluhráči z Bardejova, tak som ani nad inými tímami nerozmýšľal. '
-  //       ),
-
-  //       new ArticleContent( 'Kedy a prečo si začal s hokejbalom ? '),
-
-  //       new ArticleContent( 
-  //         'Hokejbal som hrával už dlhšiu dobu vo voľnom čase s kamarátmi a približne pred 2-3 rokmi za mnou prišiel Maximilián, či by som nemal záujem skúsiť popri hokeji hrať aj hokejbal vo Vranove a odvtedy ho hrávam aj súťažne. '
-  //       ),
-
-  //       new ArticleContent( 'Keďže si z Bardejova, nerozmýšľal si o inom hokejbalovom klube z východného Slovenska ? Alebo Vranov bol pre teba voľba číslo 1 ? '),
-
-  //       new ArticleContent('Popravde som veľmi neriešil kde pôjdem. Zo začiatku som bral hokejbal len ako doplnok k hokeju a keďže do Vranova išli aj viacerí spoluhráči z Bardejova, tak som ani nad inými tímami nerozmýšľal. '
-  //       ),
-
-  //       new ArticleContent( 'Kedy a prečo si začal s hokejbalom ? '),
-
-  //       new ArticleContent( 
-  //         'Hokejbal som hrával už dlhšiu dobu vo voľnom čase s kamarátmi a približne pred 2-3 rokmi za mnou prišiel Maximilián, či by som nemal záujem skúsiť popri hokeji hrať aj hokejbal vo Vranove a odvtedy ho hrávam aj súťažne. '
-  //       ),
-
-  //       new ArticleContent( 'Keďže si z Bardejova, nerozmýšľal si o inom hokejbalovom klube z východného Slovenska ? Alebo Vranov bol pre teba voľba číslo 1 ? '),
-
-  //       new ArticleContent('Popravde som veľmi neriešil kde pôjdem. Zo začiatku som bral hokejbal len ako doplnok k hokeju a keďže do Vranova išli aj viacerí spoluhráči z Bardejova, tak som ani nad inými tímami nerozmýšľal. '
-  //       )
-  //     ],
-  //     "/assets/img/articleTest.jpg",
-  //     "/assets/img/articleTest.jpg"
-  //   ),
-
-  //   new Article(
-  //     4,
-  //     "Predstavovanie",
-  //     "Predstavovanie hracov Brano Stefan",
-  //     "marian",
-  //     new Date(),
-  //     [
-  //       new ArticleContent( 'Kedy a prečo si začal s hokejbalom ? '),
-
-  //       new ArticleContent( 
-  //         'Hokejbal som hrával už dlhšiu dobu vo voľnom čase s kamarátmi a približne pred 2-3 rokmi za mnou prišiel Maximilián, či by som nemal záujem skúsiť popri hokeji hrať aj hokejbal vo Vranove a odvtedy ho hrávam aj súťažne. '
-  //       ),
-
-  //       new ArticleContent( 'Keďže si z Bardejova, nerozmýšľal si o inom hokejbalovom klube z východného Slovenska ? Alebo Vranov bol pre teba voľba číslo 1 ? '),
-
-  //       new ArticleContent('Popravde som veľmi neriešil kde pôjdem. Zo začiatku som bral hokejbal len ako doplnok k hokeju a keďže do Vranova išli aj viacerí spoluhráči z Bardejova, tak som ani nad inými tímami nerozmýšľal. '
-  //       ),
-
-  //       new ArticleContent( 'Kedy a prečo si začal s hokejbalom ? '),
-
-  //       new ArticleContent( 
-  //         'Hokejbal som hrával už dlhšiu dobu vo voľnom čase s kamarátmi a približne pred 2-3 rokmi za mnou prišiel Maximilián, či by som nemal záujem skúsiť popri hokeji hrať aj hokejbal vo Vranove a odvtedy ho hrávam aj súťažne. '
-  //       ),
-
-  //       new ArticleContent( 'Keďže si z Bardejova, nerozmýšľal si o inom hokejbalovom klube z východného Slovenska ? Alebo Vranov bol pre teba voľba číslo 1 ? '),
-
-  //       new ArticleContent('Popravde som veľmi neriešil kde pôjdem. Zo začiatku som bral hokejbal len ako doplnok k hokeju a keďže do Vranova išli aj viacerí spoluhráči z Bardejova, tak som ani nad inými tímami nerozmýšľal. '
-  //       ),
-
-  //       new ArticleContent( 'Kedy a prečo si začal s hokejbalom ? '),
-
-  //       new ArticleContent( 
-  //         'Hokejbal som hrával už dlhšiu dobu vo voľnom čase s kamarátmi a približne pred 2-3 rokmi za mnou prišiel Maximilián, či by som nemal záujem skúsiť popri hokeji hrať aj hokejbal vo Vranove a odvtedy ho hrávam aj súťažne. '
-  //       ),
-
-  //       new ArticleContent( 'Keďže si z Bardejova, nerozmýšľal si o inom hokejbalovom klube z východného Slovenska ? Alebo Vranov bol pre teba voľba číslo 1 ? '),
-
-  //       new ArticleContent('Popravde som veľmi neriešil kde pôjdem. Zo začiatku som bral hokejbal len ako doplnok k hokeju a keďže do Vranova išli aj viacerí spoluhráči z Bardejova, tak som ani nad inými tímami nerozmýšľal. '
-  //       )
-  //     ],
-  //     "/assets/img/articleTest.jpg",
-  //     "/assets/img/articleTest.jpg"
-  //   ),
-  //   new Article(
-  //     4,
-  //     "Predstavovanie",
-  //     "Predstavovanie hracov Brano Stefan",
-  //     "marian",
-  //     new Date(),
-  //     [
-  //       new ArticleContent( 'Kedy a prečo si začal s hokejbalom ? '),
-
-  //       new ArticleContent( 
-  //         'Hokejbal som hrával už dlhšiu dobu vo voľnom čase s kamarátmi a približne pred 2-3 rokmi za mnou prišiel Maximilián, či by som nemal záujem skúsiť popri hokeji hrať aj hokejbal vo Vranove a odvtedy ho hrávam aj súťažne. '
-  //       ),
-
-  //       new ArticleContent( 'Keďže si z Bardejova, nerozmýšľal si o inom hokejbalovom klube z východného Slovenska ? Alebo Vranov bol pre teba voľba číslo 1 ? '),
-
-  //       new ArticleContent('Popravde som veľmi neriešil kde pôjdem. Zo začiatku som bral hokejbal len ako doplnok k hokeju a keďže do Vranova išli aj viacerí spoluhráči z Bardejova, tak som ani nad inými tímami nerozmýšľal. '
-  //       ),
-
-  //       new ArticleContent( 'Kedy a prečo si začal s hokejbalom ? '),
-
-  //       new ArticleContent( 
-  //         'Hokejbal som hrával už dlhšiu dobu vo voľnom čase s kamarátmi a približne pred 2-3 rokmi za mnou prišiel Maximilián, či by som nemal záujem skúsiť popri hokeji hrať aj hokejbal vo Vranove a odvtedy ho hrávam aj súťažne. '
-  //       ),
-
-  //       new ArticleContent( 'Keďže si z Bardejova, nerozmýšľal si o inom hokejbalovom klube z východného Slovenska ? Alebo Vranov bol pre teba voľba číslo 1 ? '),
-
-  //       new ArticleContent('Popravde som veľmi neriešil kde pôjdem. Zo začiatku som bral hokejbal len ako doplnok k hokeju a keďže do Vranova išli aj viacerí spoluhráči z Bardejova, tak som ani nad inými tímami nerozmýšľal. '
-  //       ),
-
-  //       new ArticleContent( 'Kedy a prečo si začal s hokejbalom ? '),
-
-  //       new ArticleContent( 
-  //         'Hokejbal som hrával už dlhšiu dobu vo voľnom čase s kamarátmi a približne pred 2-3 rokmi za mnou prišiel Maximilián, či by som nemal záujem skúsiť popri hokeji hrať aj hokejbal vo Vranove a odvtedy ho hrávam aj súťažne. '
-  //       ),
-
-  //       new ArticleContent( 'Keďže si z Bardejova, nerozmýšľal si o inom hokejbalovom klube z východného Slovenska ? Alebo Vranov bol pre teba voľba číslo 1 ? '),
-
-  //       new ArticleContent('Popravde som veľmi neriešil kde pôjdem. Zo začiatku som bral hokejbal len ako doplnok k hokeju a keďže do Vranova išli aj viacerí spoluhráči z Bardejova, tak som ani nad inými tímami nerozmýšľal. '
-  //       )
-  //     ],
-  //     "/assets/img/articleTest.jpg",
-  //     "/assets/img/articleTest.jpg"
-  //   ),
-  //   new Article(
-  //     4,
-  //     "Predstavovanie",
-  //     "Predstavovanie hracov Brano Stefan",
-  //     "marian",
-  //     new Date(),
-  //     [
-  //       new ArticleContent( 'Kedy a prečo si začal s hokejbalom ? '),
-
-  //       new ArticleContent( 
-  //         'Hokejbal som hrával už dlhšiu dobu vo voľnom čase s kamarátmi a približne pred 2-3 rokmi za mnou prišiel Maximilián, či by som nemal záujem skúsiť popri hokeji hrať aj hokejbal vo Vranove a odvtedy ho hrávam aj súťažne. '
-  //       ),
-
-  //       new ArticleContent( 'Keďže si z Bardejova, nerozmýšľal si o inom hokejbalovom klube z východného Slovenska ? Alebo Vranov bol pre teba voľba číslo 1 ? '),
-
-  //       new ArticleContent('Popravde som veľmi neriešil kde pôjdem. Zo začiatku som bral hokejbal len ako doplnok k hokeju a keďže do Vranova išli aj viacerí spoluhráči z Bardejova, tak som ani nad inými tímami nerozmýšľal. '
-  //       ),
-
-  //       new ArticleContent( 'Kedy a prečo si začal s hokejbalom ? '),
-
-  //       new ArticleContent( 
-  //         'Hokejbal som hrával už dlhšiu dobu vo voľnom čase s kamarátmi a približne pred 2-3 rokmi za mnou prišiel Maximilián, či by som nemal záujem skúsiť popri hokeji hrať aj hokejbal vo Vranove a odvtedy ho hrávam aj súťažne. '
-  //       ),
-
-  //       new ArticleContent( 'Keďže si z Bardejova, nerozmýšľal si o inom hokejbalovom klube z východného Slovenska ? Alebo Vranov bol pre teba voľba číslo 1 ? '),
-
-  //       new ArticleContent('Popravde som veľmi neriešil kde pôjdem. Zo začiatku som bral hokejbal len ako doplnok k hokeju a keďže do Vranova išli aj viacerí spoluhráči z Bardejova, tak som ani nad inými tímami nerozmýšľal. '
-  //       ),
-
-  //       new ArticleContent( 'Kedy a prečo si začal s hokejbalom ? '),
-
-  //       new ArticleContent( 
-  //         'Hokejbal som hrával už dlhšiu dobu vo voľnom čase s kamarátmi a približne pred 2-3 rokmi za mnou prišiel Maximilián, či by som nemal záujem skúsiť popri hokeji hrať aj hokejbal vo Vranove a odvtedy ho hrávam aj súťažne. '
-  //       ),
-
-  //       new ArticleContent( 'Keďže si z Bardejova, nerozmýšľal si o inom hokejbalovom klube z východného Slovenska ? Alebo Vranov bol pre teba voľba číslo 1 ? '),
-
-  //       new ArticleContent('Popravde som veľmi neriešil kde pôjdem. Zo začiatku som bral hokejbal len ako doplnok k hokeju a keďže do Vranova išli aj viacerí spoluhráči z Bardejova, tak som ani nad inými tímami nerozmýšľal. '
-  //       )
-  //     ],
-  //     "/assets/img/articleTest.jpg",
-  //     "/assets/img/articleTest.jpg"
-  //   )]
-
-  //   postArticles(){
-  //     this.http.put('https://hmhk-4b0d7-default-rtdb.firebaseio.com/articles.json', this.newArticles).subscribe();
-  //   }
 }
-
-
-
-
-
-
-
-
-
-
-
-

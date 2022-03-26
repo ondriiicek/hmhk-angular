@@ -11,6 +11,6 @@ export class MatchesU12ResolverService implements Resolve<MatchStats[]>{
 
   constructor( private dataService : DataService ) { }
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): MatchStats[] | Observable<MatchStats[]> | Promise<MatchStats[]> {
-    return this.dataService.fetchMatchesU12();
+    return this.dataService.fetchMatches('http://localhost:3000/end-U12');
   }
 }

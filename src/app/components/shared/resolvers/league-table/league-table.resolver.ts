@@ -12,6 +12,6 @@ export class LeagueTableResolver implements Resolve<LeagueTable[]> {
   constructor( private dataService : DataService){}
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): LeagueTable[] | Observable<LeagueTable[]> | Promise<LeagueTable[]> {
-    return this.dataService.fetchSeniorTable();
+    return this.dataService.fetchLeagueTable('http://localhost:3000/tabulka-muzi');
   }
 }

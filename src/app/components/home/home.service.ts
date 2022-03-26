@@ -13,9 +13,8 @@ export class HomeService{
     this.articles = this.dataService.getArticles();
    }
   
-
   //vyberie 4 najnovsie clanky, pole je usporiadanie podla datumu
-  getMostRecentArticles(){
+  getMostRecentArticles() : Article[] {
     const mostRecent : Article[] = this.articles.slice();
     return mostRecent.splice(0,4);
   }

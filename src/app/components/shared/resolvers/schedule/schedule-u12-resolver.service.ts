@@ -11,6 +11,6 @@ export class ScheduleU12ResolverService implements Resolve<MatchStats[]>{
 
   constructor( private dataService : DataService ) { }
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): MatchStats[] | Observable<MatchStats[]> | Promise<MatchStats[]> {
-    return this.dataService.fetchScheduleU12();
+    return this.dataService.fetchSchedule('http://localhost:3000/schedule-U12');
   }
 }

@@ -8,11 +8,11 @@ import { LeagueTable } from "../../models/league-table.model";
   providedIn: 'root'
 })
 
-export class LeaugueTableU20Resolver implements Resolve<LeagueTable[]>{
-  constructor( private dateService : DataService ){}
+export class LeagueTableU12Resolver implements Resolve<LeagueTable[]>{
+  constructor( private dataService : DataService ){}
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): LeagueTable[] | Observable<LeagueTable[]> | Promise<LeagueTable[]> {
-    return this.dateService.fetchLeagueTable('http://localhost:3000/tabulka-U20');
+    return this.dataService.fetchLeagueTable('http://localhost:3000/tabulka-U12');
   }
 
 }

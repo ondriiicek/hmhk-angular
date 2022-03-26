@@ -11,7 +11,7 @@ export class MatchesSeniorResolverService {
 
   constructor( private dataService : DataService ) { }
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): MatchStats[] | Observable<MatchStats[]> | Promise<MatchStats[]> {
-    return this.dataService.fetchMatchesSenior();
+    return this.dataService.fetchMatches('http://localhost:3000/end-senior');
   }
   
 }

@@ -11,6 +11,6 @@ export class ScheduleSeniorResolverService implements Resolve<MatchStats[]>{
 
   constructor( private dataService : DataService ) { }
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): MatchStats[] | Observable<MatchStats[]> | Promise<MatchStats[]> {
-    return this.dataService.fetchScheduleSenior();
+    return this.dataService.fetchSchedule('http://localhost:3000/schedule-senior');
   }
 }

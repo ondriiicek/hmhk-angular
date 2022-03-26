@@ -11,6 +11,6 @@ export class ScheduleU17ResolverService {
   
   constructor( private dataService : DataService ) { }
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): MatchStats[] | Observable<MatchStats[]> | Promise<MatchStats[]> {
-    return this.dataService.fetchScheduleU17();
+    return this.dataService.fetchSchedule('http://localhost:3000/schedule-U17');
   }
 }

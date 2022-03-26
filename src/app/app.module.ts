@@ -44,8 +44,6 @@ import { TableBodyComponent } from './components/matches/table-body/table-body.c
 import { ChangeBooleanDirective } from './components/shared/directives/change-boolean.directive';
 import { SubNavComponent } from './components/header/main-nav/sub-nav/sub-nav.component';
 import { LeagueTableComponent } from './components/league-table/league-table.component';
-import { LeagueTableHeadComponent } from './components/league-table/league-table-head/league-table-head.component';
-import { LeagueTableBodyComponent } from './components/league-table/league-table-body/league-table-body.component';
 
 
 @NgModule({
@@ -89,9 +87,7 @@ import { LeagueTableBodyComponent } from './components/league-table/league-table
     TableBodyComponent,
     ChangeBooleanDirective,
     SubNavComponent,
-    LeagueTableComponent,
-    LeagueTableHeadComponent,
-    LeagueTableBodyComponent
+    LeagueTableComponent
   ],
   imports: [
     BrowserModule,

@@ -15,6 +15,8 @@ import { MatchesSeniorResolverService } from './components/shared/resolvers/ende
 import { MatchesU12ResolverService } from './components/shared/resolvers/ended-matches/matches-u12-resolver.service';
 import { MatchesU17ResolverService } from './components/shared/resolvers/ended-matches/matches-u17-resolver.service';
 import { MatchesU20ResolverService } from './components/shared/resolvers/ended-matches/matches-u20-resolver.service';
+import { LeagueTableU12Resolver } from './components/shared/resolvers/league-table/league-table-U12.resolver';
+import { LeagueTableU17Resolver } from './components/shared/resolvers/league-table/league-table-U17.resolver';
 import { LeaugueTableU20Resolver } from './components/shared/resolvers/league-table/league-table-U20.resolver';
 import { LeagueTableResolver } from './components/shared/resolvers/league-table/league-table.resolver';
 import { ScheduleSeniorResolverService } from './components/shared/resolvers/schedule/schedule-senior-resolver.service';
@@ -55,8 +57,8 @@ const routes: Routes = [
   },
   { path: 'turnaje', component: TournamentsComponent},
   { path: 'tabulka-muzi', component: LeagueTableComponent, resolve: [LeagueTableResolver] },
-  { path: 'tabulka-U12', component: LeagueTableComponent },
-  { path: 'tabulka-U17', component: LeagueTableComponent },
+  { path: 'tabulka-U12', component: LeagueTableComponent, resolve: [LeagueTableU12Resolver] },
+  { path: 'tabulka-U17', component: LeagueTableComponent, resolve: [LeagueTableU17Resolver] },
   { path: 'tabulka-U20', component: LeagueTableComponent, resolve: [LeaugueTableU20Resolver] }
 ];
 

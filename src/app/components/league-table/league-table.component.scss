@@ -1,13 +1,29 @@
 @import '/src/assets/scss/variables';
 
 .table{
-  background: #d5d5d5;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
   border-radius: .4rem;
+  
+  max-width: 1000px;
   thead{
-
+    background: $red;
+    color: #fff;
+    border-bottom: 3px solid $dark-grey;
+    
     th{
       font-weight: 400;
       border-bottom: 1px solid $red;
     }
+  }
+  tbody{
+    background: $light-grey;
+    .rank{
+      font-weight: 400;
+    }
+  }
+  .first-three{
+    color: $red;
+    font-weight: 600;
   }
 }
