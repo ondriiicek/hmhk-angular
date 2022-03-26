@@ -14,7 +14,6 @@ export class TableBodyComponent implements OnInit {
 
   ngOnInit(): void {
     this.tableData = this.matcheService.getMatchTable();
-    
   }
 
 }

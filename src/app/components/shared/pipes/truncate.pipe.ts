@@ -5,6 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class TruncatePipe implements PipeTransform {
 
+  //Skrati text v preview ak je prilis dlhy
   transform(content: string, maxLength: number): string {
     let text = content.split(" ");
     text = text.splice( 0, maxLength );
