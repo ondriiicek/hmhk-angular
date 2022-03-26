@@ -1,10 +1,26 @@
 # HmhkAngular
 
+Táto web stránka je určená pre hokejbalový klub HMHK bauska Vranov. Pracujem na nej spolu s kamarátom pričom ja mám na starosti front-end, ktorý tvorím v **Angulari**.
+Kamarát má na starosti back-end, no zatiaľ stránka využíva ako dočasnú alternatívu **Firebase** a **json-server**. Celá práca ešte nie je dokončená.
+
+## Použité "fičúry"
+  - Routing
+  - Pipes
+  - Reactive Forms
+  - HTTP requests
+  - Directives
+  - Services
+  - a iné
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.3.
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+## Json-server
+
+Run `json-server --watch fake-database/db.json`. Navigate to `http://localhost:3000/`
 
 ## Code scaffolding
 
