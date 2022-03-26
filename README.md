@@ -3,6 +3,8 @@
 Táto web stránka je určená pre hokejbalový klub HMHK bauska Vranov. Pracujem na nej spolu s kamarátom pričom ja mám na starosti front-end, ktorý tvorím v **Angulari**.
 Kamarát má na starosti back-end, no zatiaľ stránka využíva ako dočasnú alternatívu **Firebase** a **json-server**. Celá práca ešte nie je dokončená.
 
+V zložke **screenshots** možno nájsť screenshoty stránky.
+
 ## Použité "fičúry"
   - Routing
   - Pipes
