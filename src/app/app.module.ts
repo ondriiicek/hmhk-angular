@@ -44,6 +44,11 @@ import { TableBodyComponent } from './components/matches/table-body/table-body.c
 import { ChangeBooleanDirective } from './components/shared/directives/change-boolean.directive';
 import { SubNavComponent } from './components/header/main-nav/sub-nav/sub-nav.component';
 import { LeagueTableComponent } from './components/league-table/league-table.component';
+import { CategoriePreviewComponent } from './components/categories/categorie-preview/categorie-preview.component';
+import { CategorieU12Component } from './components/categories/categorie-u12/categorie-u12.component';
+import { CategorieU17Component } from './components/categories/categorie-u17/categorie-u17.component';
+import { CategorieU20Component } from './components/categories/categorie-u20/categorie-u20.component';
+import { CategorieSeniorComponent } from './components/categories/categorie-senior/categorie-senior.component';
 
 
 @NgModule({
@@ -87,7 +92,12 @@ import { LeagueTableComponent } from './components/league-table/league-table.com
     TableBodyComponent,
     ChangeBooleanDirective,
     SubNavComponent,
-    LeagueTableComponent
+    LeagueTableComponent,
+    CategoriePreviewComponent,
+    CategorieU12Component,
+    CategorieU17Component,
+    CategorieU20Component,
+    CategorieSeniorComponent
   ],
   imports: [
     BrowserModule,

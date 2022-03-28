@@ -1,0 +1,25 @@
+.categorie-preview{
+  position: relative;
+  img{
+    max-width: 100%;
+    border-radius: .4rem;
+  }
+
+  .overlay{
+    position: absolute;
+    top: 0;
+    background: rgba(0,0,0, .4);
+    display: flex;
+    align-items: flex-end;
+    height: 100%;
+    width: 100%;
+    border-radius: .4rem;
+    color: #fff;
+
+    h5{
+      font-weight: 400;
+      font-size: 1rem;
+      padding: .4rem;
+    }
+  }
+}
