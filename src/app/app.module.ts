@@ -6,25 +6,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MainNavComponent } from './components/header/main-nav/main-nav.component';
-import { HomeComponent } from './components/home/home.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { TournamentsComponent } from './components/tournaments/tournaments.component';
-import { ContactComponent } from './components/contact/contact.component';
-import { MostReadComponent } from './components/home/most-read/most-read.component';
-import { LatestArticlesComponent } from './components/home/latest-articles/latest-articles.component';
-import { TopArticleCategoriesComponent } from './components/home/sidebar/top-article-categories/top-article-categories.component';
-import { CategorieComponent } from './components/home/sidebar/top-article-categories/categorie/categorie.component';
-import { ContactCardComponent } from './components/contact/contact-card/contact-card.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { FooterNavigationComponent } from './components/footer/footer-navigation/footer-navigation.component';
 import { FooterSocialComponent } from './components/footer/footer-social/footer-social.component';
 import { FooterContactComponent } from './components/footer/footer-contact/footer-contact.component';
-import { AboutUsComponent } from './components/home/about-us/about-us.component';
-import { ClubImageComponent } from './components/home/about-us/club-image/club-image.component';
-import { HistoryComponent } from './components/home/about-us/history/history.component';
-import { IntroComponent } from './components/home/about-us/intro/intro.component';
-import { ContactFormComponent } from './components/contact/contact-form/contact-form.component';
-import { BadgeComponent } from './components/shared/components/badge/badge.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ChangeBooleanDirective } from './components/shared/directives/change-boolean.directive';
 import { SubNavComponent } from './components/header/main-nav/sub-nav/sub-nav.component';
@@ -35,17 +22,10 @@ import { CategorieU17Component } from './components/categories/categorie-u17/cat
 import { CategorieU20Component } from './components/categories/categorie-u20/categorie-u20.component';
 import { CategorieSeniorComponent } from './components/categories/categorie-senior/categorie-senior.component';
 import { MatchesModule } from './components/matches/matches.module';
-import { BlogComponent } from './components/blog/blog.component';
-import { ArticleComponent } from './components/blog/article/article.component';
-import { ArticleContentComponent } from './components/blog/article/article-content/article-content.component';
-import { ArticleFooterComponent } from './components/blog/article/article-footer/article-footer.component';
-import { ArticleHeaderComponent } from './components/blog/article/article-header/article-header.component';
-import { ArticleSidebarComponent } from './components/blog/article/article-sidebar/article-sidebar.component';
-import { PreviewPageComponent } from './components/blog/preview-page/preview-page.component';
-import { PreviewComponent } from './components/blog/preview-page/preview/preview.component';
-import { TruncatePipe } from './components/shared/pipes/truncate.pipe';
 import { SharedModule } from './components/shared/shared.module';
 import { BlogModule } from './components/blog/blog.module';
+import { ContactModule } from './components/contact/contact.module';
+import { HomeModule } from './components/home/home.module';
 
 
 @NgModule({
@@ -53,22 +33,12 @@ import { BlogModule } from './components/blog/blog.module';
     AppComponent,
     HeaderComponent,
     MainNavComponent,
-    HomeComponent,
     CategoriesComponent,
     TournamentsComponent,
-    ContactComponent,
-    MostReadComponent,
-    LatestArticlesComponent,
-    ContactCardComponent,
     FooterComponent,
     FooterNavigationComponent,
     FooterSocialComponent,
     FooterContactComponent,
-    AboutUsComponent,
-    ClubImageComponent,
-    HistoryComponent,
-    IntroComponent,
-    ContactFormComponent,
     ChangeBooleanDirective,
     SubNavComponent,
     LeagueTableComponent,
@@ -85,7 +55,9 @@ import { BlogModule } from './components/blog/blog.module';
     HttpClientModule,
     MatchesModule,
     SharedModule,
-    BlogModule
+    BlogModule,
+    ContactModule,
+    HomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

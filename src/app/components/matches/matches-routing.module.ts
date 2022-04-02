@@ -13,7 +13,7 @@ import { MatchesComponent } from "./matches.component";
 import { TableBodyComponent } from "./table-body/table-body.component";
 
 const routes: Routes = [
-  { path: 'odohrate-zapasy', component: MatchesComponent,
+  { path: '', component: MatchesComponent,
     children:[
       { path: '', redirectTo: 'muzi', pathMatch: 'full'},
       { path: 'U12', component: TableBodyComponent, resolve: [MatchesU12ResolverService] },

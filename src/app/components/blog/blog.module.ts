@@ -28,7 +28,7 @@ import { PreviewComponent } from "./preview-page/preview/preview.component";
     CommonModule,
     SharedModule,
     RouterModule.forChild([
-      { path: 'blog', component: BlogComponent, resolve: [ArticlesResolverService],
+      { path: '', component: BlogComponent, resolve: [ArticlesResolverService],
         children:[
           { path: '', component: PreviewPageComponent, pathMatch: 'full' },
           { path: ':id', component: ArticleComponent }
