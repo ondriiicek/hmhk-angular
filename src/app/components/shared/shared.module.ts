@@ -1,6 +1,5 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
-import { RouterModule } from "@angular/router";
 import { SidebarComponent } from "../home/sidebar/sidebar.component";
 import { SocialComponent } from "../home/sidebar/social/social.component";
 import { CategorieComponent } from "../home/sidebar/top-article-categories/categorie/categorie.component";

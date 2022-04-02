@@ -1,3 +1,5 @@
+
+
 .categorie-preview{
   position: relative;
   img{
@@ -8,18 +10,46 @@
   .overlay{
     position: absolute;
     top: 0;
-    background: rgba(0,0,0, .4);
-    display: flex;
-    align-items: flex-end;
+    background: rgba(0,0,0, .5);
     height: 100%;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     border-radius: .4rem;
     color: #fff;
 
-    h5{
-      font-weight: 400;
-      font-size: 1rem;
+    h2{
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      font-size: 1.8rem;
+      text-transform: uppercase;
       padding: .4rem;
     }
+  }
+}
+
+.categorie-preview-link:hover{
+  h2,h4{
+    animation: shake .5s ease;
+  }
+}
+
+@keyframes shake {
+  10%{
+    transform: rotate(10deg);
+  }
+  40%{
+    transform: rotate(-10deg);
+  }
+  60%{
+    transform: rotate(10deg);
+  }
+  80%{
+    transform: rotate(-10deg);
+  }
+  100%{
+    transform: rotate(0deg);
   }
 }

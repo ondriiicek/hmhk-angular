@@ -1,7 +1,6 @@
 <div class="container categories my-5">
-  <app-categorie-preview></app-categorie-preview>
-  <app-categorie-preview></app-categorie-preview>
-  <app-categorie-preview></app-categorie-preview>
-  <app-categorie-preview></app-categorie-preview>
+  <div *ngFor="let categorie of categories">
+    <app-categorie-preview [categorieInfo]="categorie"></app-categorie-preview>
+  </div>
 </div>
 

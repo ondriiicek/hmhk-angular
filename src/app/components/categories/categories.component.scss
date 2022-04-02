@@ -1,7 +1,6 @@
 .categories{
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
-  
-  height: 55vh;
+  grid-template-columns: repeat(2, 1fr);
+  gap: .5rem 4rem;
+  width: 70%;
 }
