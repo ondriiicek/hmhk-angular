@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../shared/data.service';
 import { Contact } from '../shared/models/contact.model';
 import { ContactService } from './contact.service';
 
@@ -10,10 +11,13 @@ import { ContactService } from './contact.service';
 export class ContactComponent implements OnInit {
   contacts : Contact[] = [];
 
-  constructor( private contactService : ContactService ) { }
+  constructor( private contactService : ContactService,
+               private dataService : DataService ) { }
 
   ngOnInit(): void {
-    this.contacts = this.contactService.getContacts();
+    this.dataService.fetchContacts().subscribe(
+      contacts => this.contacts = contacts
+    )
   }
 
 }

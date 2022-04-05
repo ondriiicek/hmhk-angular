@@ -6,6 +6,7 @@ import { Contact } from "./models/contact.model";
 import { ArticleContent } from "./models/article-content.model";
 import { MatchStats } from "./models/matches-table.model";
 import { LeagueTable } from "./models/league-table.model";
+import { Observable } from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -24,6 +25,7 @@ export class DataService{
   }
 
   getContacts(){
+
     return this.contacts.slice();
   }
 
@@ -47,14 +49,15 @@ export class DataService{
   }
 
   //Kontakty pre contact page
-  fetchContacts(){
+  fetchContacts(): Observable<Contact[]>{
     const url ='https://hmhk-4b0d7-default-rtdb.firebaseio.com/contacts.json';
 
-    return this.http.get<Contact[]>(url).pipe(
-      tap( contacts => {
-        this.contacts = contacts;
-      })
-    )
+    // return this.http.get<Contact[]>(url).pipe(
+    //   tap( contacts => {
+    //     this.contacts = contacts;
+    //   })
+    // )
+    return this.http.get<Contact[]>(url);
   }
 
   //Odohrate zapasy, natiahne ich resolver pre danu kategoriu
