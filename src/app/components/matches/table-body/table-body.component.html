@@ -22,4 +22,8 @@
     </div>
   </div>
 
+  <div *ngIf="isLong" class="text-center">
+    <a *ngIf="!isFullyLoad" (click)="toggleTable()">Viac <i class="fa-solid fa-chevron-down"></i></a>
+    <a *ngIf="isFullyLoad" (click)="toggleTable()">Menej <i class="fa-solid fa-chevron-up"></i></a>
+  </div>
 </section>

@@ -1,6 +1,5 @@
 import { Injectable } from "@angular/core";
 import { ActivatedRoute, NavigationEnd, Router } from "@angular/router";
-import { filter } from "rxjs/operators";
 import { DataService } from "../shared/data.service";
 import { MatchStats } from "../shared/models/matches-table.model";
 
@@ -16,8 +15,9 @@ export class MatchesService {
                private route : ActivatedRoute ){}
 
   //data ziskame podla url adresy, tym ze sa spusti resolver pre danu routu potom sa z data servicu posle tabulka pre urcitu kategoriu
-  getMatchTable() : MatchStats[]{
+  getMatchTable(): MatchStats[]{
     this.matchTable = this.dataService.getMatchTable();
+
     return this.matchTable;
   }
 
@@ -27,9 +27,14 @@ export class MatchesService {
     
     currentRoute = splitedRoute[splitedRoute.length - 1];
     if( currentRoute === 'muzi' ) currentRoute = 'Muži';
-
     return currentRoute;
-    
+  }
+
+  //vrati skratenu tabulku, v ktorej bude 5 zapasov
+  getShortenTable(){
+    let shortTable = this.matchTable.slice();
+    shortTable = shortTable.splice(0,5);
+    return shortTable;
   }
 
 }
