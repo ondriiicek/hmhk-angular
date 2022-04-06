@@ -6,16 +6,15 @@ import { Article } from '../shared/models/article.model';
   providedIn: 'root'
 })
 export class HomeService{
-  articles : Article[] = [];
-  previews : Article[] = [];
 
-  constructor( private dataService : DataService ) {
-    this.articles = this.dataService.getArticles();
-   }
+  constructor() {}
   
   //vyberie 4 najnovsie clanky, pole je usporiadanie podla datumu
-  getMostRecentArticles() : Article[] {
-    const mostRecent : Article[] = this.articles.slice();
-    return mostRecent.splice(0,4);
+  getMostRecentArticles( articles : Article[] ) : Article[] {
+    articles.sort((a : Article, b: Article) => {
+      return <any>new Date(b.date) - <any>new Date(a.date);
+    });
+
+    return articles.splice(0,4);
   }
 }

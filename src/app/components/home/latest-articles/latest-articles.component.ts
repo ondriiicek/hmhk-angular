@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../../shared/data.service';
 import { Article } from '../../shared/models/article.model';
 import { HomeService } from '../home.service';
 
@@ -10,9 +11,13 @@ import { HomeService } from '../home.service';
 export class LatestArticlesComponent implements OnInit {
   articles : Article[] = [];
 
-  constructor( private homeService : HomeService ) { }
+  constructor( private homeService : HomeService,
+               private dataService : DataService ) { }
 
   ngOnInit(): void {
-    this.articles = this.homeService.getMostRecentArticles();
+    this.dataService.fetchArticles().subscribe(
+      data => this.articles = this.homeService.getMostRecentArticles(data)
+    )
+    
   }
 }

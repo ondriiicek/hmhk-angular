@@ -7,16 +7,19 @@ import { DataService } from "../shared/data.service";
 })
 
 export class BlogService{
+  articles : Article[] = [];
 
   constructor( private dataService : DataService ){}
 
-  getArticles(){
-    return this.dataService.getArticles();
+  setArticles( articles : Article[]){
+    console.log(articles);
+    
+    this.articles = articles;
   }
 
   //pre clanok, najde konkretny clanok na ktory klikol user podla id v url adrese
   getArticle( id : number ) : Article{
-    const articles = this.getArticles();
+    const articles = this.articles;
     let currentArticle : Article;
 
     articles.forEach( 
@@ -30,7 +33,7 @@ export class BlogService{
 
   //pre sidebar v clanku, nahodne vybere tri clanky
   pickRandomArticles( id : number ): Article[]{
-    let articles = this.getArticles();
+    let articles = this.articles;
     let randomArticles : Article[] = [];
 
     while( randomArticles.length < 3 ){

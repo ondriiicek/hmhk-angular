@@ -41,22 +41,13 @@ export class DataService{
   fetchArticles(){
     const url = 'https://hmhk-4b0d7-default-rtdb.firebaseio.com/articles.json';
 
-    return this.http.get<Article[]>(url).pipe(
-      tap( articles => {
-        this.articles = this.sortByDate(articles);
-      })
-    );
+    return this.http.get<Article[]>(url);
   }
 
   //Kontakty pre contact page
   fetchContacts(): Observable<Contact[]>{
     const url ='https://hmhk-4b0d7-default-rtdb.firebaseio.com/contacts.json';
 
-    // return this.http.get<Contact[]>(url).pipe(
-    //   tap( contacts => {
-    //     this.contacts = contacts;
-    //   })
-    // )
     return this.http.get<Contact[]>(url);
   }
 

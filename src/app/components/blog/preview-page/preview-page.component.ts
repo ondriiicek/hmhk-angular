@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../../shared/data.service';
 import { Article } from '../../shared/models/article.model';
 import { BlogService } from '../blog.service';
 
@@ -10,10 +11,16 @@ import { BlogService } from '../blog.service';
 export class PreviewPageComponent implements OnInit {
   previews : Article[] = [];
 
-  constructor( private blogService : BlogService ) { }
+  constructor( private blogService : BlogService,
+               private dataService : DataService ) { }
 
   ngOnInit(): void {
-    this.previews = this.blogService.getArticles();
+    this.dataService.fetchArticles().subscribe(
+      articles =>{
+        this.previews = articles
+        this.blogService.setArticles(articles);
+      } 
+    )
   }
 
 }

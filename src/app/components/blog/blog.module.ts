@@ -1,7 +1,6 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { RouterModule } from "@angular/router";
-import { ArticlesResolverService } from "../shared/resolvers/articles-resolver.service";
 import { SharedModule } from "../shared/shared.module";
 import { ArticleContentComponent } from "./article/article-content/article-content.component";
 import { ArticleFooterComponent } from "./article/article-footer/article-footer.component";
@@ -28,7 +27,7 @@ import { PreviewComponent } from "./preview-page/preview/preview.component";
     CommonModule,
     SharedModule,
     RouterModule.forChild([
-      { path: '', component: BlogComponent, resolve: [ArticlesResolverService],
+      { path: '', component: BlogComponent,
         children:[
           { path: '', component: PreviewPageComponent, pathMatch: 'full' },
           { path: ':id', component: ArticleComponent }
