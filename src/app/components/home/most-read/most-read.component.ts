@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { SharedService } from '../../shared/shared.service';
+import { HomeService } from '../home.service';
 
 @Component({
   selector: 'app-most-read',
@@ -13,23 +13,35 @@ export class MostReadComponent implements OnInit {
   index : number = 1;
   int : any;
 
-  constructor( private sharedService : SharedService,
+  constructor( private homeService : HomeService,
                private router : Router,
                private route : ActivatedRoute ) { 
   }
 
   ngOnInit(): void {
-    this.articleTitles = this.sharedService.getTitles();
+    this.homeService.articleSubject.subscribe(
+      articles => {
+         //ziska nazvy najcitanejsich clankov, ktore zatial nesu najcitanejsie :)
+         this.articleTitles = this.homeService.getMostReadArticleTitles(articles);
+         //spusti interval
+         this.showMostReadArticles();
+      }
+    )
+  }
+  
+  toBlog(){
+    this.router.navigate(['../blog'], {relativeTo: this.route});
+  }
+  
+  //kazde tri sekundy ukaze iny najcitanejsi clanok
+  private showMostReadArticles(){
     this.title = this.articleTitles[0];
     this.int = setInterval(() => {
       if( this.index === this.articleTitles.length ) this.index = 0;
       this.title = this.articleTitles[this.index];
       this.index++;
-    }, 4000);
-  }
-
-  toBlog(){
-    this.router.navigate(['../blog'], {relativeTo: this.route});
+    }, 3000);
+    
   }
 
   ngOnDestroy(): void {

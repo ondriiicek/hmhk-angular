@@ -20,12 +20,11 @@ export class DataService{
 
   constructor( private http : HttpClient ){}
 
-  getArticles(){
+  getArticles(){    
     return this.articles.slice();
   }
 
   getContacts(){
-
     return this.contacts.slice();
   }
 
@@ -41,7 +40,13 @@ export class DataService{
   fetchArticles(){
     const url = 'https://hmhk-4b0d7-default-rtdb.firebaseio.com/articles.json';
 
-    return this.http.get<Article[]>(url);
+    return this.http.get<Article[]>(url).pipe(
+      tap( 
+        articles => {
+          this.articles = articles;          
+        }
+      )
+    );
   }
 
   //Kontakty pre contact page
