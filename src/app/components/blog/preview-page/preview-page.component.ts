@@ -17,7 +17,7 @@ export class PreviewPageComponent implements OnInit {
   ngOnInit(): void {
     this.dataService.fetchArticles().subscribe(
       articles =>{
-        this.previews = articles
+        this.previews = articles;
         this.blogService.setArticles(articles);
       } 
     )

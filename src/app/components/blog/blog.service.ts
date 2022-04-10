@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Article } from "../shared/models/article.model";
 import { DataService } from "../shared/data.service";
+import { ActivatedRoute, Params } from "@angular/router";
 
 @Injectable({
   providedIn: 'root'
@@ -8,21 +9,20 @@ import { DataService } from "../shared/data.service";
 
 export class BlogService{
   articles : Article[] = [];
+  constructor(){}
 
-  constructor( private dataService : DataService ){}
-
-  setArticles( articles : Article[]){
-    console.log(articles);
-    
+  setArticles( articles : Article[] ){
     this.articles = articles;
   }
 
-  //pre clanok, najde konkretny clanok na ktory klikol user podla id v url adrese
-  getArticle( id : number ) : Article{
-    const articles = this.articles;
-    let currentArticle : Article;
 
-    articles.forEach( 
+  //pre clanok, najde konkretny clanok na ktory klikol user podla id v url adrese
+  //tiez ulozi clanky, aby boli k dispozicii pre sidebar v clanku
+  getArticle( id : number, articles : Article[] ) : Article{
+    let currentArticle : Article;
+    this.setArticles(articles);
+
+    this.articles.forEach(
       article => {
         if( article.id === id ) currentArticle = article;
       }

@@ -10,7 +10,6 @@ export class TruncatePipe implements PipeTransform {
     let text = content.split(" ");
     text = text.splice( 0, maxLength );
     const truncateText = text.join(" ") + "...";
-    console.log(truncateText);
     
     return truncateText;
   }

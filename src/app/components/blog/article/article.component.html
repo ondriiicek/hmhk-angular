@@ -1,5 +1,9 @@
-<app-article-header [article]="article"></app-article-header>
-<div class="main-content">
-  <app-article-content [article]="article"></app-article-content>
-  <app-article-sidebar [id]="article.id"></app-article-sidebar>
-</div>
+
+<article *ngIf="isLoaded">
+  <app-article-header [article]="article"></app-article-header>
+  <div class="main-content">
+    <app-article-content [article]="article"></app-article-content>
+    <app-article-sidebar [id]="article.id"></app-article-sidebar>
+  </div>
+</article>
+

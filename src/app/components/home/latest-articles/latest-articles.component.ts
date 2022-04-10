@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationExtras, Router } from '@angular/router';
 import { DataService } from '../../shared/data.service';
 import { Article } from '../../shared/models/article.model';
 import { HomeService } from '../home.service';
@@ -18,6 +19,5 @@ export class LatestArticlesComponent implements OnInit {
     this.dataService.fetchArticles().subscribe(
       data => this.articles = this.homeService.getMostRecentArticles(data)
     )
-    
   }
 }

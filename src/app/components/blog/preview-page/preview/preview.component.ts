@@ -18,6 +18,5 @@ export class PreviewComponent implements OnInit {
 
   showArticle(){
     this.router.navigate([this.preview.id], {relativeTo: this.route });
-    
   }
 }
