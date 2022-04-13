@@ -13,11 +13,9 @@ export class ContactService{
   constructor( private http : HttpClient,
                private dataService : DataService ){}
 
-  getContacts(){
-    this.contact = this.dataService.getContacts();
-    return this.contact.slice();
+  setContacts( contact : Contact[] ){
+    this.contact = contact;
   }
-
   getFooterContact() : Contact[]{
     const contactFooter : Contact[] = [];
     this.contact.forEach( contact => {

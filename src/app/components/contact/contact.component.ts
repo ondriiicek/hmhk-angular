@@ -16,7 +16,10 @@ export class ContactComponent implements OnInit {
 
   ngOnInit(): void {
     this.dataService.fetchContacts().subscribe(
-      contacts => this.contacts = contacts
+      contacts => {
+        this.contacts = contacts;
+        this.contactService.setContacts(contacts);
+      }
     )
   }
 
